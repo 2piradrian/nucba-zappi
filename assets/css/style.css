@@ -9,7 +9,6 @@
 	--terciary: #4d4d4d;
 }
 
-<<<<<<< Updated upstream
 * {
 	margin: 0;
 	border: 0;
@@ -80,7 +79,6 @@ main {
 	background: linear-gradient(90deg, var(--main), var(--secondary));
 }
 /* Fin Item Container */
-=======
 /* carrito de compras Facu */
 .cart-menu-grid-container{
     background-color: var(--background);
@@ -137,4 +135,3 @@ main {
 	grid-row-start: 7;
 	grid-row-end: 8;
 }
->>>>>>> Stashed changes
