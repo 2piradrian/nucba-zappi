@@ -9,6 +9,7 @@
 	--terciary: #4d4d4d;
 }
 
+<<<<<<< Updated upstream
 * {
 	margin: 0;
 	border: 0;
@@ -79,3 +80,61 @@ main {
 	background: linear-gradient(90deg, var(--main), var(--secondary));
 }
 /* Fin Item Container */
+=======
+/* carrito de compras Facu */
+.cart-menu-grid-container{
+    background-color: var(--background);
+    height: 690px;
+    width: 450px;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: 30px 58px 400px 30px 30px 30px 30px  ;
+}
+
+.cart-menu-grid-container > .cart-title{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	align-self: center;
+	justify-self: flex-start;
+	padding-left: 12px;
+}
+.cart-menu-grid-container > .items-cart-container{
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	justify-self: center;
+}
+.cart-menu-grid-container > .container-precios{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+.cart-menu-grid-container > .total-span{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 5;
+	grid-row-end: 6;
+}
+.cart-menu-grid-container > .total-span-precio{
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 5;
+	grid-row-end: 6;
+}
+.cart-menu-grid-container >.button-buy{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 6;
+	grid-row-end: 7;
+}
+.cart-menu-grid-container >.verMas-text{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 7;
+	grid-row-end: 8;
+}
+>>>>>>> Stashed changes
