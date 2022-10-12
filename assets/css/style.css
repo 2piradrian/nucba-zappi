@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+
 :root {
-	--background: #252525;
+	--background: #131415;
+	--itemBackground: #252525;
 	--main: #ffa400;
 	--secondary: #fc2933;
 	--contrast: #ffffff;
@@ -19,3 +21,61 @@ body {
 	background-color: var(--background);
 	color: var(--contrast);
 }
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Item Container */
+.itemContainer {
+	height: 300px;
+	width: 400px;
+	padding: 20px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--itemBackground);
+}
+.itemContainer img {
+	height: auto;
+	width: 100%;
+}
+.itemDescription {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-weight: 300;
+	gap: 10px;
+}
+.itemTitle {
+	font-weight: 500;
+}
+.itemSubtitle {
+	color: var(--terciary);
+}
+.itemBuy {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.price {
+	font-weight: 500;
+	background: linear-gradient(90deg, var(--main), var(--secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.addToCart {
+	padding: 8px;
+	border-radius: 30px;
+	border: none;
+	font-weight: 700;
+	color: var(--contrast);
+	background: linear-gradient(90deg, var(--main), var(--secondary));
+}
+/* Fin Item Container */
