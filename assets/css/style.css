@@ -7,6 +7,9 @@
 	--secondary: #fc2933;
 	--contrast: #ffffff;
 	--terciary: #4d4d4d;
+	/* #FFA100 */
+	/* #FB103D */
+
 }
 
 * {
@@ -18,7 +21,7 @@
 html,
 body {
 	font-family: "Roboto", sans-serif;
-	background-color: var(--background);
+	/* background-color: var(--background); */
 	color: var(--contrast);
 }
 
@@ -81,12 +84,13 @@ main {
 /* Fin Item Container */
 /* carrito de compras Facu */
 .cart-menu-grid-container{
-    background-color: var(--background);
+   background-color: #252525;
     height: 690px;
     width: 450px;
 	display: grid;
-	grid-template-columns: repeat(2,1fr);
-	grid-template-rows: 30px 58px 400px 30px 30px 30px 30px  ;
+	grid-template-columns: 225px 225px;
+	grid-template-rows: 40px 98px 432px 30px 30px 30px 30px  ;
+	position: relative;
 }
 
 .cart-menu-grid-container > .cart-title{
@@ -94,16 +98,35 @@ main {
 	grid-column-end: 2;
 	grid-row-start: 2;
 	grid-row-end: 3;
-	align-self: center;
+	align-self: flex-end;
 	justify-self: flex-start;
 	padding-left: 12px;
+	font-family: "Roboto", sans-serif;
 }
 .cart-menu-grid-container > .items-cart-container{
 	grid-column-start: 1;
 	grid-column-end: 4;
 	grid-row-start: 3;
 	grid-row-end: 4;
-	justify-self: center;
+	justify-self: flex-start;
+	padding-left: 15px;
+	padding-top: 15px;
+	width: 80%;
+}
+.items-cart-container > .items-cart{
+	box-shadow: 2px 2px 2px black;
+	box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+	border-radius: 15px;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	/* grid-template-rows: ; */
+	/* filter: drop-shadow(2px 2px 2px black); */
+	
+}
+.items-cart > .image-simulate{
+	background-color: red;
+	width: 55px;
+	height: 55px;
 }
 .cart-menu-grid-container > .container-precios{
 	grid-column-start: 1;
@@ -128,10 +151,32 @@ main {
 	grid-column-end: 3;
 	grid-row-start: 6;
 	grid-row-end: 7;
+	width: 20px;
 }
 .cart-menu-grid-container >.verMas-text{
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 7;
 	grid-row-end: 8;
+}
+
+.cart-menu-grid-container::after{
+	content: "X";
+	font-family: "Roboto", sans-serif;
+	font-weight: 200;
+	font-size: 12px;
+	border-radius: 3px;
+	/* text-align: center; */
+	width: 27px;
+	height: 23px;
+	position: absolute;
+	top: 4%;
+	left: 3%;
+	background-color: red;
+	z-index: 2;
+	background:linear-gradient(to right, #FFA100 , #FB103D);
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	cursor: pointer;
 }
