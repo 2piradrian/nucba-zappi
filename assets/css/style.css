@@ -234,7 +234,7 @@ main {
 	top: 160%;
 	left: 0;
 	grid-template-columns: 200px 200px;
-	grid-template-rows: 40px 118px 250px 50.5px 50.5px 90.5px 70.5px;
+	grid-template-rows: 40px 80px 288px 50.5px 50.5px 90.5px 70.5px;
 	position: relative;
 	border-radius: 15px;
 	
@@ -262,12 +262,15 @@ main {
 	/* padding-left: 15px;*/
 	width: 80%;
 	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	gap:25px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	padding: 10px;
-	margin-top: 20px;
+	/* margin-top: 30px; */
+	/* margin-top: 20px; */
 	border-radius: 8px;
 	font-weight: 500;
 	background: #252525;
