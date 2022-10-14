@@ -236,6 +236,7 @@ main {
 	grid-template-columns: 200px 200px;
 	grid-template-rows: 40px 98px 250px 40.5px 40.5px 40.5px 40.5px;
 	position: relative;
+	border-radius: 15px;
 	
 	
 }
