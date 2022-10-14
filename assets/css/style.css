@@ -228,13 +228,13 @@ main {
 /* carrito de compras Facu */
 .cart-menu-grid-container {
 	background-color: #252525;
-	height: 550px;
+	height: 670px;
 	width: 400px;
 	display: grid;
-	top: 150%;
+	top: 160%;
 	left: 0;
 	grid-template-columns: 200px 200px;
-	grid-template-rows: 40px 98px 250px 40.5px 40.5px 40.5px 40.5px;
+	grid-template-rows: 40px 118px 250px 50.5px 50.5px 90.5px 70.5px;
 	position: relative;
 	border-radius: 15px;
 	
@@ -267,6 +267,7 @@ main {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	padding: 10px;
+	margin-top: 20px;
 	border-radius: 8px;
 	font-weight: 500;
 	background: #252525;
@@ -317,44 +318,7 @@ main {
 	height: 20px;
 	cursor: pointer;
 }
-/* .buttons-pedido-container::after{
-	content: '-';
-	width: 100%;
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	z-index: 10;
-	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%);
-	color: transparent;
-	-webkit-background-clip: text;
-	mix-blend-mode: normal;
-	opacity: 0.1;
-	border-radius: 8px;
-	top: -8%;
-	right:170%;
-	text-align: center;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.buttons-pedido-container::before{
-	content: '+';
-	width: 100%;
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	z-index: 10;
-	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%);
-	border-radius: 8px;
-	top: -8%;
-	left:170%;
-	text-align: center;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
 
 .items-cart > .image-simulate {
 	background-color: red;
@@ -401,7 +365,7 @@ main {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	text-fill-color: transparent;
+	/* text-fill-color: transparent; */
 }
 .cart-menu-grid-container > .container-precios {
 	grid-column-start: 1;
@@ -409,8 +373,12 @@ main {
 	grid-row-start: 4;
 	grid-row-end: 5;
 	padding: 0px 40px 0px 40px;
+	/* margin-top: 80px; */
 	display: grid;
 	grid-template-columns: 50% 50%;
+
+	gap: 10px;
+	margin-top: 40px;
 	/* grid-template-rows: 50% 50%; */
 	/* border-bottom: rgba(157, 157, 157, 0.4) solid; */
 
@@ -424,6 +392,7 @@ main {
 	height: 0.2px;
 	
 	align-self: flex-end;
+	margin-top: 8%;
 	background-color: rgba(157, 157, 157, 0.4);
 }
 .container-precios > .subtotal-span{
@@ -462,6 +431,9 @@ main {
 	justify-content: flex-start;
 	align-items: center;
 	padding: 0px 40px 0px 40px;
+	margin-top: 68px;
+	font-weight: 500;
+	font-size: 22px;
 }
 .cart-menu-grid-container > .total-span-precio {
 	grid-column-start: 2;
@@ -472,7 +444,10 @@ main {
 	justify-content: flex-end;
 	align-items: center;
 	padding: 0px 40px 0px 40px;
-	color: var(--main)
+	color: var(--main);
+	margin-top: 68px;
+	font-weight: 700;
+	font-size: 22px;
 
 }
 .cart-menu-grid-container > .button-buy {
@@ -480,12 +455,13 @@ main {
 	grid-column-end: 4;
 	grid-row-start: 6;
 	grid-row-end: 7;
-	width: 20px;
+	height: 40px;
 	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	justify-self: center;
+	align-self: flex-end;
 
 	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
 	box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
@@ -494,8 +470,9 @@ main {
 	font-weight: 700;
 	letter-spacing: 0.5px;
 	font-style: normal;
-	font-size: clamp(12px ,2vw, 22px);
+	font-size: clamp(12px ,2vw, 18px);
 	line-height: 17px;
+
 }
 .cart-menu-grid-container > .verMas-text {
 	grid-column-start: 1;
