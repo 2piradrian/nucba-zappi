@@ -273,7 +273,51 @@ main {
 	grid-row-end: 2;
 	grid-row-end: 3;
 	justify-self: center;
+	position: relative;
+	font-family: "Roboto", sans-serif;
+	cursor: pointer;
 }
+.buttons-pedido-container::after{
+	content: '-';
+	width: 100%;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	z-index: 10;
+	/* background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%); */
+	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%);
+	mix-blend-mode: normal;
+	opacity: 0.1;
+	border-radius: 8px;
+	top: 0;
+	right:200%;
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buttons-pedido-container::before{
+	content: '+';
+	width: 100%;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	z-index: 10;
+	/* background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%); */
+	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%);
+	border-radius: 8px;
+	top: 0;
+	left:200%;
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
 .items-cart > .image-simulate {
 	background-color: red;
 	width: 55px;
@@ -291,6 +335,7 @@ main {
 	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	text-align: center;
 }
 .items-cart > .items-cart-second-title {
 	grid-column-start: 2;
@@ -299,6 +344,9 @@ main {
 	grid-row-end: 3;
 	text-align: center;
 	color: var(--terciary);
+	font-size: clamp(12px, 2vw, 15px);
+	min-width: 150px;
+	flex-wrap: nowrap;
 }
 .items-cart > .items-cart-precio {
 	grid-column-start: 2;
@@ -306,6 +354,11 @@ main {
 	grid-row-start: 3;
 	grid-row-end: 4;
 	text-align: center;
+	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FFA100 -0.81%, #FF005C 101.53%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
 }
 .cart-menu-grid-container > .container-precios {
 	grid-column-start: 1;
@@ -337,6 +390,7 @@ main {
 	grid-column-end: 3;
 	grid-row-start: 7;
 	grid-row-end: 8;
+
 }
 
 .cart-menu-grid-container::after {
