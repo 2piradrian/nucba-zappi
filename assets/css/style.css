@@ -24,6 +24,121 @@ body {
 	color: var(--contrast);
 }
 
+
+/* Header */
+
+
+header {
+	width: 100vw;
+	height: 151px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 30px 0 30px;
+}
+
+.logoContainer{
+	max-width: 76px;
+}
+
+.logoContainer img{
+	height: auto;
+	width: 100%;
+}
+
+
+/* Navbar*/
+
+ul {
+	display: none;
+}
+
+
+/* navbar para insertar con JS al hacer click en el menú hamburguesa */
+
+/* ul {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+Acá se me ocurrió que sacar la parte de Home, o en todo caso agregar otras etiquetas p con carrito y perfil
+
+ul li p {
+	display: none;
+} */
+
+
+ul li {
+	list-style: none;
+}
+
+ul li a{
+	text-decoration: none;
+}
+
+nav div i{
+	color: var(--main);
+}
+
+.homeContainer{
+	display: flex;
+	width: 75px;
+	align-items: center;
+	gap: 14.5px;
+}
+
+.homeContainer p{
+	color: var(--contrast);
+	font-weight: 300;
+}
+
+.homeContainer img{
+	max-width: 20px;
+}
+
+.cartContainer{
+	display: flex;
+	flex-direction: column;
+	width: 22px;
+	align-items: center;
+	gap: 1px;
+}
+
+.cartContainer img {
+	max-width: 20px;
+}
+
+.wheelsContainer{
+	display: flex;
+	gap: 10px;
+}
+
+.wheelsContainer img{
+	max-width: 3px;
+}
+
+.profileContainer{
+	display: flex;
+	width: 20px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap:2.5px;
+}
+
+.profileContainer img:first-child {
+	max-width: 10.58px;
+}
+
+.profileContainer img:last-child{
+	max-width: 16px;
+}
+
+
+/* Main */
+
+
 main {
 	max-width: 1600px;
 	width: 100vw;
@@ -233,4 +348,20 @@ main {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+
+	header {
+		padding: 0 110px 0 75px;
+	}
+
+	ul {
+		display: flex;
+		gap: 70px;
+	}
+
+	.burguerContainer{
+		display: none;
+	}
 }
