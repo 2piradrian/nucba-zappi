@@ -24,6 +24,8 @@ body {
 	font-family: "Montserrat", sans-serif;
 	background-color: var(--background);
 	color: var(--contrast);
+	width: 100%;
+	max-width: 1400px;
 }
 body {
 	display: flex;
@@ -35,9 +37,9 @@ body {
 /* Header */
 
 header {
-	width: 100vw;
+	width: 100%;
 	height: 150px;
-	max-width: 1600px;
+	max-width: 1400px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -47,7 +49,7 @@ header {
 }
 
 main {
-	max-width: 1600px;
+	max-width: 1400px;
 }
 
 .logoContainer {
@@ -149,7 +151,7 @@ nav div i {
 
 main {
 	max-width: 1600px;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -157,7 +159,7 @@ main {
 
 /* Hero */
 .appHero {
-	width: 100vw;
+	width: 100%;
 	max-width: 1600px;
 }
 .presentation {
