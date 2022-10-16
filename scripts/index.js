@@ -15,5 +15,8 @@ const closeCartMenu = ()=>{
 const init = () =>{
     cartNavIcon.addEventListener('click', showCartMenu);
     closeButton.addEventListener('click',closeCartMenu);
+    document.addEventListener('click',(e)=>{
+        if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon){closeCartMenu()};
+    })
 }
 init();
