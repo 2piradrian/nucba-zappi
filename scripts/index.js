@@ -1,3 +1,8 @@
+// Funcion para guardar carrito en local storage
+let carrito = JSON.parse(localStorage.getItem("cart")) || [];
+const saveToLocalStorage = (carrito) => {
+	localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
