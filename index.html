@@ -7,10 +7,7 @@
 		<link rel="stylesheet" href="/assets/css/style.css" />
 		<link rel="stylesheet" href="assets/css/categories.css" />
 		<title>Nucba Zappi</title>
-		<script
-			src="https://kit.fontawesome.com/cb93d80cbc.js"
-			crossorigin="anonymous"
-		></script>
+		<script src="https://kit.fontawesome.com/cb93d80cbc.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
@@ -37,7 +34,7 @@
 					<li>
 						<a href="#">
 							<div class="cartContainer">
-								<img src="assets/cart_1.png" alt="icono de carrito" />
+								<img id="cart_nav_icon" src="assets/cart_1.png" alt="icono de carrito" />
 								<div class="wheelsContainer">
 									<img src="assets/profile_1.png" alt="rueda de carrito" />
 									<img src="assets/profile_1.png" alt="rueda de carrito" />
@@ -55,7 +52,8 @@
 				</ul>
 			</nav>
 			<!-- Facu Carrito de compras -->
-			<!-- <div class="cart-menu-grid-container">
+			<div class="cart-menu-grid-container" id="cart_menu_container">
+				<button class="close-button" id="closeButton">x</button>
 				<h2 class="cart-title">Tus productos</h2>
 				<div class="items-cart-container">
 					<div class="items-cart">
@@ -104,7 +102,7 @@
 
 				<button class="button-buy">Comprar</button>
 				<span class="verMas-text">Ver más productos</span>
-			</div> -->
+			</div>
 		</header>
 		<div class="containerBody">
 			<main>
@@ -116,17 +114,10 @@
 								<h2 class="bigTitle">Si tenes Zappi,</h2>
 								<h2 class="smallTitle">tenes Nucba.</h2>
 							</div>
-							<p class="subText">
-								Buscá lo que quieras y nucba te quedas sin comida.
-							</p>
+							<p class="subText">Buscá lo que quieras y nucba te quedas sin comida.</p>
 							<button class="showMore">VER MÁS</button>
 						</div>
-						<img
-							src="/assets/img/hero/pizzaHero.png"
-							alt="imagen pizza"
-							srcset=""
-							class="pizzaHero"
-						/>
+						<img src="/assets/img/hero/pizzaHero.png" alt="imagen pizza" srcset="" class="pizzaHero" />
 					</div>
 					<!-- Justin Hoy te recomendamos -->
 				</section>
@@ -137,10 +128,7 @@
 						<div class="categorias">
 							<div class="popular">
 								<div class="iconCategory">
-									<img
-										src="assets/img/categories/pizzaicon.png"
-										alt="Popular"
-									/><img
+									<img src="assets/img/categories/pizzaicon.png" alt="Popular" /><img
 										class="blur"
 										src="assets/img/categories/pizzaicon.png"
 										alt="Popular"
@@ -153,10 +141,7 @@
 							</div>
 							<div class="pizzas">
 								<div class="iconCategory pizza">
-									<img
-										src="assets/img/categories/pizzas.png"
-										alt="Pizzas"
-									/><img
+									<img src="assets/img/categories/pizzas.png" alt="Pizzas" /><img
 										class="blur"
 										src="assets/img/categories/pizzas.png"
 										alt="Pizzas"
@@ -169,15 +154,8 @@
 							</div>
 							<div class="hamburguer">
 								<div class="iconCategory">
-									<img
-										src="assets/img/categories/burger.png"
-										alt="Hamburguesas"
-									/>
-									<img
-										class="blur"
-										src="assets/img/categories/burger.png"
-										alt="Hamburguesa"
-									/>
+									<img src="assets/img/categories/burger.png" alt="Hamburguesas" />
+									<img class="blur" src="assets/img/categories/burger.png" alt="Hamburguesa" />
 								</div>
 								<div class="textCategory">
 									<h3>Hamburguesas</h3>
@@ -186,10 +164,7 @@
 							</div>
 							<div class="fries">
 								<div class="iconCategory">
-									<img
-										src="assets/img/categories/fries.png"
-										alt="Papas fritas"
-									/><img
+									<img src="assets/img/categories/fries.png" alt="Papas fritas" /><img
 										class="blur"
 										src="assets/img/categories/fries.png"
 										alt="Papas fritas"
@@ -215,10 +190,7 @@
 							</div>
 							<div class="mexican">
 								<div class="iconCategory">
-									<img
-										src="assets/img/categories/taco.png"
-										alt="Comida Mexicana"
-									/><img
+									<img src="assets/img/categories/taco.png" alt="Comida Mexicana" /><img
 										class="blur"
 										src="assets/img/categories/taco.png"
 										alt="Comida Mexicana"
@@ -250,11 +222,7 @@
 					<!-- Trula con flex wrap -->
 					<div class="cardContainer">
 						<div class="itemContainer">
-							<img
-								src="/assets/img/pizzas/pizza1.png"
-								alt="imagen del item"
-								srcset=""
-							/>
+							<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
 							<div class="itemDescription">
 								<h3 class="itemTitle">La Mr. Pit</h3>
 								<p class="itemSubtitle">Solo para expertos</p>
@@ -265,11 +233,7 @@
 							</div>
 						</div>
 						<div class="itemContainer">
-							<img
-								src="/assets/img/pizzas/pizza1.png"
-								alt="imagen del item"
-								srcset=""
-							/>
+							<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
 							<div class="itemDescription">
 								<h3 class="itemTitle">La Mr. Pit</h3>
 								<p class="itemSubtitle">Solo para expertos</p>
@@ -280,11 +244,7 @@
 							</div>
 						</div>
 						<div class="itemContainer">
-							<img
-								src="/assets/img/pizzas/pizza1.png"
-								alt="imagen del item"
-								srcset=""
-							/>
+							<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
 							<div class="itemDescription">
 								<h3 class="itemTitle">La Mr. Pit</h3>
 								<p class="itemSubtitle">Solo para expertos</p>
@@ -295,11 +255,7 @@
 							</div>
 						</div>
 						<div class="itemContainer">
-							<img
-								src="/assets/img/pizzas/pizza1.png"
-								alt="imagen del item"
-								srcset=""
-							/>
+							<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
 							<div class="itemDescription">
 								<h3 class="itemTitle">La Mr. Pit</h3>
 								<p class="itemSubtitle">Solo para expertos</p>
@@ -310,11 +266,7 @@
 							</div>
 						</div>
 						<div class="itemContainer">
-							<img
-								src="/assets/img/pizzas/pizza1.png"
-								alt="imagen del item"
-								srcset=""
-							/>
+							<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
 							<div class="itemDescription">
 								<h3 class="itemTitle">La Mr. Pit</h3>
 								<p class="itemSubtitle">Solo para expertos</p>
@@ -331,5 +283,8 @@
 				<!-- Justin Footer -->
 			</footer>
 		</div>
+
+		<script src="/scripts/const.js"></script>
+		<script src="/scripts/index.js"></script>
 	</body>
 </html>
