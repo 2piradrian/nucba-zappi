@@ -230,7 +230,27 @@ main {
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--itemBackground);
+	position: relative;
 }
+.itemContainer > .popular-h2{
+	position: absolute;
+	left:-5%;
+	top: 0;
+	transform: rotate(-25deg);
+	background-color: var(--secondary);
+	width: 25%;
+	height: 25px;
+	font-size: clamp(12px, 2vw, 12px);
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	font-weight: 900;
+	background: linear-gradient(90deg, var(--main), var(--secondary));
+}
+.disabled{display: none;}
 .itemContainer img {
 	height: auto;
 	width: 100%;

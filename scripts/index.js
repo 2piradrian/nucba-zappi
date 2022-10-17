@@ -19,20 +19,21 @@ const renderMostPopulars = (mostPopularsArray)=>{
 
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj)=>{
-	const {name, img, price, subtitle} = popularObj;
+	const {name, img, price, subtitle, popular} = popularObj;
 
 	return `
 	<div class="itemContainer">
-							<img src="${img}" alt="imagen del item" srcset="" />
-							<div class="itemDescription">
-								<h3 class="itemTitle">${name}</h3>
-								<p class="itemSubtitle">${subtitle}</p>
-								<div class="itemBuy">
-									<p class="price">$ ${price}</p>
-									<button class="addToCart">Agregar</button>
-								</div>
-							</div>
-						</div>
+		<h2 class="popular-h2 ${popular ? '' : 'disabled'}">Popular</h2>
+		<img src="${img}" alt="imagen del item" srcset="" />
+			<div class="itemDescription">
+				<h3 class="itemTitle">${name}</h3>
+				<p class="itemSubtitle">${subtitle}</p>
+			<div class="itemBuy">
+				<p class="price">$ ${price}</p>
+				<button class="addToCart">Agregar</button>
+			</div>
+			</div>
+	</div>
 	`
 }
 
