@@ -11,6 +11,8 @@ const closeButton = document.querySelector("#closeButton");
 // Body
 const mostPopularContainer = document.querySelector("#mostPopularContainer");
 const showMoreButton = document.querySelector("#showMoreButton");
+const menuContainer = document.getElementById("mostPopularContainer"); 
+
 
 const cart = [];
 
@@ -268,3 +270,4 @@ const productsArray = [
 		subtitle: "Postre",
 	},
 ];
+
