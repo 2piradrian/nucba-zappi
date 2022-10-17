@@ -12,6 +12,15 @@ const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
 };
 
+const showFourMore = (arrayOfObjects)=>{
+	const noPopularRest = arrayOfObjects.filter(e=>!e.popular);
+	const result = [];
+	for(let i = 0; i<= noPopularRest.length; i+=4)
+	{
+		result.push(noPopularRest.slice(i, i+4));
+	}
+}
+
 //funcion de renderizado de los más populares en HTML.
 const renderMostPopulars = (mostPopularsArray) => {
 	mostPopularContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
@@ -46,11 +55,19 @@ const filterMostPopulars = (arrayOfObjects) => {
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
+<<<<<<< Updated upstream
 	document.addEventListener("click", (e) => {
 		if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
 			closeCartMenu();
 		}
 	});
 	addEventListener("DOMContentLoaded", filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
+=======
+	document.addEventListener('click',(e)=>{
+		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon){closeCartMenu()};
+	})
+	addEventListener('DOMContentLoaded', filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
+	showMoreButton.addEventListener('click', showFourMore(productsArray));
+>>>>>>> Stashed changes
 };
 init();

@@ -2,6 +2,7 @@ const cartMenuContainer = document.querySelector("#cart_menu_container");
 const cartNavIcon = document.querySelector("#cart_nav_icon");
 const closeButton = document.querySelector("#closeButton");
 const mostPopularContainer = document.querySelector('#mostPopularContainer');
+const showMoreButton = document.querySelector('#showMoreButton');
 
 const productsArray = [
 	{
