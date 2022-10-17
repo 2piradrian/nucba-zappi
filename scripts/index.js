@@ -51,7 +51,7 @@ const filterMostPopulars = (arrayOfObjects) => {
 	renderMostPopulars(mostPopularFiltered);
 };
 
-// Funciones carrito
+// Renderiza los elementos en el carrito
 const renderCartList = (product) => {
 	const { id, name, img, price, subtitle, quantity } = product;
 	return `
@@ -69,12 +69,14 @@ const renderCartList = (product) => {
 	`;
 };
 
+// Vacia los precion en caso de no haber productos
 const cleanPrices = () => {
 	total.textContent = "--";
 	subtotal.textContent = "--";
 	envio.textContent = "--";
 };
 
+// Envia los productos a ser renderizados
 const cartRender = () => {
 	if (!cart.length) {
 		itemsCartSelected.innerHTML = "<p>Tu carrito está vacío :(</p>";
@@ -83,6 +85,21 @@ const cartRender = () => {
 	}
 	itemsCartSelected.innerHTML = cart.map(renderCartList).join("");
 };
+
+// Multiplica precio por cantidad y va acumulando para obtener el subtotal
+const getPrices = () => {
+	cart.reduce((acc, cur) => acc + Number(cur.price) * Number(cur.quantity), 0);
+	/* 
+	Me queda pendiente renderizar los precios 
+	total.textContent = "--";
+	subtotal.textContent = "--";
+	envio.textContent = "--";
+	*/
+};
+
+// Funcion que obtiene el elemento y lo añade al carro
+const addToCart = () => {};
+
 // -->  Carrito  <-- //
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
