@@ -103,14 +103,12 @@ const addToCart = () => {};
 // -->  Carrito  <-- //
 
 // Selecciona categoria y lo renderiza
-renderMenu = (e) => {
+const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
 	console.log(clickData);
 	menu.innerHTML = "";
 	if (clickData) {
-		const obtainProduct = productsArray.filter(
-			(objeto) => objeto.category === clickData
-		);
+		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
 		console.log(obtainProduct);
 		renderProduct = obtainProduct.map(
 			(object) =>
@@ -137,7 +135,7 @@ const init = () => {
 			closeCartMenu();
 		}
 	});
-	document.addEventListener("click", (e) => renderMenu(e));
+	document.addEventListener("click", renderMenu);
 	filterMostPopulars(productsArray);
 	cartRender();
 };
