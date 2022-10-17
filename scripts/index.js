@@ -84,6 +84,34 @@ const cartRender = () => {
 	itemsCartSelected.innerHTML = cart.map(renderCartList).join("");
 };
 // -->  Carrito  <-- //
+
+// Selecciona categoria y lo renderiza
+renderMenu = (e) => {
+	const clickData = e.target.dataset.type;
+	console.log(clickData);
+	menu.innerHTML = "";
+	if (clickData) {
+		const obtainProduct = productsArray.filter(
+			(objeto) => objeto.category === clickData
+		);
+		console.log(obtainProduct);
+		renderProduct = obtainProduct.map(
+			(object) =>
+				(menuContainer.innerHTML += `<div class="itemContainer">
+		<img src="${object.img}" alt="imagen del item" srcset="" />
+		<div class="itemDescription">
+			<h3 class="itemTittle>${object.name}</h3>
+			<p class="itemSubtittle">${object.subtitle}</p>
+			<div class="itemBuy">
+				<p class="price">$${object.price}</p>
+				<button class="addToCart">Agregar</button>
+			</div>
+		</div>
+	</div>
+	`)
+		);
+	}
+};
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
@@ -92,6 +120,7 @@ const init = () => {
 			closeCartMenu();
 		}
 	});
+	document.addEventListener("click", (e) => renderMenu(e));
 	filterMostPopulars(productsArray);
 	cartRender();
 };
