@@ -39,9 +39,12 @@
 }
 .iconCategory {
 	width: 70%;
-	height: 60%;
-	padding: 10px;
-	position: relative;
+    height: 60%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .iconCategory > img {
 	width: 85px;
@@ -52,10 +55,10 @@
 }
 .iconCategory > .blur {
 	position: absolute;
-	top: 10%;
-	left: 12px;
-	filter: blur(3px);
-	z-index: 3;
+    top: 1%;
+    left: 7px;
+    filter: blur(3px);
+    z-index: 3;
 }
 .pizzas > .pizza > img {
 	width: 75px;
