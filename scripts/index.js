@@ -14,25 +14,27 @@ const closeCartMenu = () => {
 
 //funcion de renderizado de los más populares en HTML.
 const renderMostPopulars = (mostPopularsArray)=>{
-	mostPopularContainer.innerHTML = mostPopularsArray.map((desestructuringPopulars));
+	mostPopularContainer.innerHTML = mostPopularsArray.map((desestructuringPopulars)).join('');
 }
 
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj)=>{
-	const {name, img, price} = popularObj;
+	const {name, img, price, subtitle} = popularObj;
 
-	return `<div class="itemContainer">
-					<img src="" alt="imagen del item" srcset="" />
-					<div class="itemDescription">
-						<h3 class="itemTitle">${name}</h3>
-						<p class="itemSubtitle">Solo para expertos</p>
-					<div class="itemBuy">
-						<p class="price">${price}</p>
-						<button class="addToCart">Agregar</button>
-					</div>
-			</div>`
+	return `
+	<div class="itemContainer">
+							<img src="${img}" alt="imagen del item" srcset="" />
+							<div class="itemDescription">
+								<h3 class="itemTitle">${name}</h3>
+								<p class="itemSubtitle">${subtitle}</p>
+								<div class="itemBuy">
+									<p class="price">${price}</p>
+									<button class="addToCart">Agregar</button>
+								</div>
+							</div>
+						</div>
+	`
 }
-
 
 // filtra los populares y llama al render
 const filterMostPopulars = (arrayOfObjects)=>{

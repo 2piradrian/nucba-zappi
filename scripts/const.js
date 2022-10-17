@@ -11,6 +11,8 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza3.png",
 		popular:true,
 		price: 1250,
+		subtitle: "Solo para expertos",
+		
 	},
 	{
 		id: 2,
@@ -19,6 +21,7 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza6.png",
 		popular:false,
 		price: 1400,
+		subtitle: "Peperoni papá",
 	},
 	{
 		id: 3,
@@ -27,6 +30,7 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza2.png",
 		popular:true,
 		price: 1250,
+		subtitle: "Jamoncituuuu",
 	},
 	{
 		id: 4,
@@ -35,6 +39,7 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza1.png",
 		popular:false,
 		price: 1100,
+		subtitle: "Re vegano pa",
 	},
 	{
 		id: 5,
@@ -43,6 +48,7 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza4.png",
 		popular:true,
 		price: 1430,
+		subtitle: "Quesito",
 	},
 	{
 		id: 6,
@@ -51,6 +57,7 @@ const productsArray = [
 		img: "./assets/img/pizzas/pizza8.png",
 		popular:false,
 		price: 1290,
+		subtitle: "Dale que sos vos",
 	},
 	{
 		id: 7,
@@ -59,6 +66,7 @@ const productsArray = [
 		img: "./assets/img/products/completa.jgp",
 		popular:true,
 		price: 800,
+		subtitle: "Esoo es lindo che",
 	},
 	{
 		id: 8,
@@ -67,6 +75,7 @@ const productsArray = [
 		img: "./assets/img/products/simpleQueso.webp",
 		popular:true,
 		price: 750,
+		subtitle: "Queso nomás",
 	},
 	{
 		id: 9,
@@ -75,6 +84,7 @@ const productsArray = [
 		img: "./assets/img/products/mushroomBrie.jgp",
 		popular:false,
 		price: 750,
+		subtitle: "Upaa!!",
 	},
 	{
 		id: 10,
@@ -83,6 +93,7 @@ const productsArray = [
 		img: "./assets/img/products/barbecue.webp",
 		popular:true,
 		price: 850,
+		subtitle: "Juega bastante",
 	},
 	{
 		id: 11,
@@ -91,6 +102,7 @@ const productsArray = [
 		img: "./assets/img/products/onionRing.jgp",
 		popular:false,
 		price: 850,
+		subtitle: "Muy ricasss",
 	},
 	{
 		id: 12,
@@ -99,6 +111,7 @@ const productsArray = [
 		img: "./assets/img/products/veggie.jgp",
 		popular:false,
 		price: 700,
+		subtitle: "Lentejuelas",
 	},
 	{
 		id: 13,
@@ -107,6 +120,7 @@ const productsArray = [
 		img: "./assets/img/products/fries.jgp",
 		popular:true,
 		price: 700,
+		subtitle: "Salen fritas",
 	},
 	{
 		id: 14,
@@ -115,6 +129,7 @@ const productsArray = [
 		img: "./assets/img/products/friesBacon.jgp",
 		popular:false,
 		price: 800,
+		subtitle: "Cheddar",
 	},
 	{
 		id: 15,
@@ -123,6 +138,7 @@ const productsArray = [
 		img: "./assets/img/products/friesChili.jgp",
 		popular:false,
 		price: 750,
+		subtitle: "Ta que arde",
 	},
 	{
 		id: 16,
@@ -131,6 +147,7 @@ const productsArray = [
 		img: "./assets/img/products/friesCreamChesse.jgp",
 		popular:true,
 		price: 1000,
+		subtitle: "Riquisimo",
 	},
 	{
 		id: 17,
@@ -139,6 +156,7 @@ const productsArray = [
 		img: "./assets/img/products/wrapMeat.jpg",
 		popular:false,
 		price: 1000,
+		subtitle:"Clasico",
 	},
 	{
 		id: 18,
@@ -147,6 +165,7 @@ const productsArray = [
 		img: "./assets/img/products/wrapAtun.jpg",
 		popular:false,
 		price: 900,
+		subtitle: "Tradicional",
 	},
 	{
 		id: 19,
@@ -155,6 +174,7 @@ const productsArray = [
 		img: "./assets/img/products/wrapVeggie.webp",
 		popular:false,
 		price: 950,
+		subtitle: "Veggie",
 	},
 	{
 		id: 20,
@@ -163,6 +183,7 @@ const productsArray = [
 		img: "./assets/img/products/tacosMeat.webp",
 		popular:true,
 		price: 1250,
+		subtitle: "A lo mexicano",
 	},
 	{
 		id: 21,
@@ -171,6 +192,7 @@ const productsArray = [
 		img: "./assets/img/products/tacosVeggie.jgp",
 		popular:true,
 		price: 1000,
+		subtitle: "Veggie mexico",
 	},
 	{
 		id: 22,
@@ -179,6 +201,7 @@ const productsArray = [
 		img: "./assets/img/products/quesadilla.jpg",
 		popular:false,
 		price: 600,
+		subtitle: "Un lujo",
 	},
 	{
 		id: 23,
@@ -187,6 +210,7 @@ const productsArray = [
 		img: "./assets/img/products/nachosCheddar.webp",
 		popular:false,
 		price: 780,
+		subtitle: "Caseros",
 	},
 	{
 		id: 24,
@@ -195,6 +219,7 @@ const productsArray = [
 		img: "./assets/img/products/nachosBeans.jpg",
 		popular:false,
 		price: 950,
+		subtitle: "Completos",
 	},
 	{
 		id: 25,
@@ -203,6 +228,7 @@ const productsArray = [
 		img: "./assets/img/products/shakeStrawberry.webp",
 		popular:false,
 		price: 600,
+		subtitle: "Postre",
 	},
 	{
 		id: 26,
@@ -211,6 +237,7 @@ const productsArray = [
 		img: "./assets/img/products/shakeChocolate.jgp",
 		popular:true,
 		price: 600,
+		subtitle: "Postre",
 	},
 	{
 		id: 27,
@@ -219,6 +246,7 @@ const productsArray = [
 		img: "./assets/img/products/shakeSprinkle.webp",
 		popular:false,
 		price: 600,
+		subtitle: "Postre",
 	},
 	{
 		id: 28,
@@ -227,5 +255,6 @@ const productsArray = [
 		img: "./assets/img/products/shakeMashmellow.jgp",
 		popular:true,
 		price: 600,
+		subtitle: "Postre",
 	},
 ];
