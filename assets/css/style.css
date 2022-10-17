@@ -595,6 +595,14 @@ main {
 	mix-blend-mode: normal;
 	opacity: 0.3;
 }
+/* .decorationBackground {
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	filter: blur(1px);
+	z-index: 6;
+} */
 
 @media screen and (min-width: 570px) {
 	.bigTitle {

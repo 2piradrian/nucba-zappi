@@ -52,6 +52,9 @@ const filterMostPopulars = (arrayOfObjects) => {
 	renderMostPopulars(mostPopularFiltered);
 };
 
+// Funciones carrito
+
+// --> <-- //
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
@@ -60,7 +63,11 @@ const init = () => {
 			closeCartMenu();
 		}
 	});
+<<<<<<< Updated upstream
 	addEventListener("DOMContentLoaded", filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
 	showMoreButton.addEventListener('click',(e)=>(showFourMore(productsArray)));
+=======
+	filterMostPopulars(productsArray);
+>>>>>>> Stashed changes
 };
 init();
