@@ -13,17 +13,17 @@ const closeCartMenu = () => {
 };
 
 //funcion de renderizado de los más populares en HTML.
-const renderMostPopulars = (mostPopularsArray)=>{
-	mostPopularContainer.innerHTML = mostPopularsArray.map((desestructuringPopulars)).join('');
-}
+const renderMostPopulars = (mostPopularsArray) => {
+	mostPopularContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+};
 
 // funcion solo para desestructurar los objs.
-const desestructuringPopulars = (popularObj)=>{
-	const {name, img, price, subtitle, popular} = popularObj;
+const desestructuringPopulars = (popularObj) => {
+	const { name, img, price, subtitle, popular } = popularObj;
 
 	return `
 	<div class="itemContainer">
-		<h2 class="popular-h2 ${popular ? '' : 'disabled'}">Popular</h2>
+		<h2 class="popular-h2 ${popular ? "" : "disabled"}">Popular</h2>
 		<img src="${img}" alt="imagen del item" srcset="" />
 			<div class="itemDescription">
 				<h3 class="itemTitle">${name}</h3>
@@ -34,21 +34,23 @@ const desestructuringPopulars = (popularObj)=>{
 			</div>
 			</div>
 	</div>
-	`
-}
+	`;
+};
 
-// filtra los populares y llama al render
-const filterMostPopulars = (arrayOfObjects)=>{
-	const mostPopularFiltered = arrayOfObjects.filter(e=> e.popular);
-	renderMostPopulars(mostPopularFiltered);	
-}
+// Filtra los populares y llama al render
+const filterMostPopulars = (arrayOfObjects) => {
+	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
+	renderMostPopulars(mostPopularFiltered);
+};
 
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
-	document.addEventListener('click',(e)=>{
-		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon){closeCartMenu()};
-	})
-	addEventListener('DOMContentLoaded', filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
+	document.addEventListener("click", (e) => {
+		if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
+			closeCartMenu();
+		}
+	});
+	addEventListener("DOMContentLoaded", filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
 };
 init();
