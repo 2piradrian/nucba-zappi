@@ -55,19 +55,12 @@ const filterMostPopulars = (arrayOfObjects) => {
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
-<<<<<<< Updated upstream
 	document.addEventListener("click", (e) => {
 		if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
 			closeCartMenu();
 		}
 	});
 	addEventListener("DOMContentLoaded", filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
-=======
-	document.addEventListener('click',(e)=>{
-		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon){closeCartMenu()};
-	})
-	addEventListener('DOMContentLoaded', filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
-	showMoreButton.addEventListener('click', showFourMore(productsArray));
->>>>>>> Stashed changes
+	showMoreButton.addEventListener('click',(e)=>(showFourMore(productsArray)));
 };
 init();
