@@ -28,7 +28,7 @@ const desestructuringPopulars = (popularObj)=>{
 								<h3 class="itemTitle">${name}</h3>
 								<p class="itemSubtitle">${subtitle}</p>
 								<div class="itemBuy">
-									<p class="price">${price}</p>
+									<p class="price">$ ${price}</p>
 									<button class="addToCart">Agregar</button>
 								</div>
 							</div>
