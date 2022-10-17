@@ -12,24 +12,32 @@ const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
 };
 
-//se renderizan los filtrados populares que le llegan de parametro
-const renderMostPopulars = (arrayToRender) =>{
-	console.log(arrayToRender)
+//funcion de renderizado de los más populares en HTML.
+const renderMostPopulars = (mostPopularsArray)=>{
+	mostPopularContainer.innerHTML = mostPopularsArray.map((desestructuringPopulars));
+}
+
+// funcion solo para desestructurar los objs.
+const desestructuringPopulars = (popularObj)=>{
+	const {name, img, price} = popularObj;
+
 	return `<div class="itemContainer">
-					<img src="/assets/img/pizzas/pizza1.png" alt="imagen del item" srcset="" />
+					<img src="" alt="imagen del item" srcset="" />
 					<div class="itemDescription">
-							<h3 class="itemTitle">La Mr. Pit</h3>
-							<p class="itemSubtitle">Solo para expertos</p>
-							<div class="itemBuy">
-							<p class="price">$ 350</p>
-							<button class="addToCart">Agregar</button>
+						<h3 class="itemTitle">${name}</h3>
+						<p class="itemSubtitle">Solo para expertos</p>
+					<div class="itemBuy">
+						<p class="price">${price}</p>
+						<button class="addToCart">Agregar</button>
 					</div>
 			</div>`
 }
-// se filtran los mas populares
+
+
+// filtra los populares y llama al render
 const filterMostPopulars = (arrayOfObjects)=>{
 	const mostPopularFiltered = arrayOfObjects.filter(e=> e.popular);
-	renderMostPopulars(mostPopularFiltered)
+	renderMostPopulars(mostPopularFiltered);	
 }
 
 const init = () => {
@@ -38,6 +46,6 @@ const init = () => {
 	document.addEventListener('click',(e)=>{
 		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon){closeCartMenu()};
 	})
-	addEventListener('DOMContentLoaded', filterMostPopulars(productsArray));
+	addEventListener('DOMContentLoaded', filterMostPopulars(productsArray)); //inicializamos la llamada al filter de populares.
 };
 init();

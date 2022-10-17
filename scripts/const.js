@@ -10,6 +10,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza3.png",
 		popular:true,
+		price: 1250,
 	},
 	{
 		id: 2,
@@ -17,6 +18,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza6.png",
 		popular:false,
+		price: 1400,
 	},
 	{
 		id: 3,
@@ -24,6 +26,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza2.png",
 		popular:true,
+		price: 1250,
 	},
 	{
 		id: 4,
@@ -31,6 +34,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza1.png",
 		popular:false,
+		price: 1100,
 	},
 	{
 		id: 5,
@@ -38,6 +42,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza4.png",
 		popular:true,
+		price: 1430,
 	},
 	{
 		id: 6,
@@ -45,6 +50,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza8.png",
 		popular:false,
+		price: 1290,
 	},
 	{
 		id: 7,
@@ -52,6 +58,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/completa.jgp",
 		popular:true,
+		price: 800,
 	},
 	{
 		id: 8,
@@ -59,6 +66,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/simpleQueso.webp",
 		popular:true,
+		price: 750,
 	},
 	{
 		id: 9,
@@ -66,6 +74,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/mushroomBrie.jgp",
 		popular:false,
+		price: 750,
 	},
 	{
 		id: 10,
@@ -73,6 +82,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/barbecue.webp",
 		popular:true,
+		price: 850,
 	},
 	{
 		id: 11,
@@ -80,6 +90,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/onionRing.jgp",
 		popular:false,
+		price: 850,
 	},
 	{
 		id: 12,
@@ -87,6 +98,7 @@ const productsArray = [
 		category: "hamburguesa",
 		img: "./assets/img/products/veggie.jgp",
 		popular:false,
+		price: 700,
 	},
 	{
 		id: 13,
@@ -94,6 +106,7 @@ const productsArray = [
 		category: "papas",
 		img: "./assets/img/products/fries.jgp",
 		popular:true,
+		price: 700,
 	},
 	{
 		id: 14,
@@ -101,6 +114,7 @@ const productsArray = [
 		category: "papas",
 		img: "./assets/img/products/friesBacon.jgp",
 		popular:false,
+		price: 800,
 	},
 	{
 		id: 15,
@@ -108,6 +122,7 @@ const productsArray = [
 		category: "papas",
 		img: "./assets/img/products/friesChili.jgp",
 		popular:false,
+		price: 750,
 	},
 	{
 		id: 16,
@@ -115,6 +130,7 @@ const productsArray = [
 		category: "papas",
 		img: "./assets/img/products/friesCreamChesse.jgp",
 		popular:true,
+		price: 1000,
 	},
 	{
 		id: 17,
@@ -122,6 +138,7 @@ const productsArray = [
 		category: "wrap",
 		img: "./assets/img/products/wrapMeat.jpg",
 		popular:false,
+		price: 1000,
 	},
 	{
 		id: 18,
@@ -129,6 +146,7 @@ const productsArray = [
 		category: "wrap",
 		img: "./assets/img/products/wrapAtun.jpg",
 		popular:false,
+		price: 900,
 	},
 	{
 		id: 19,
@@ -136,6 +154,7 @@ const productsArray = [
 		category: "wrap",
 		img: "./assets/img/products/wrapVeggie.webp",
 		popular:false,
+		price: 950,
 	},
 	{
 		id: 20,
@@ -143,6 +162,7 @@ const productsArray = [
 		category: "mexicana",
 		img: "./assets/img/products/tacosMeat.webp",
 		popular:true,
+		price: 1250,
 	},
 	{
 		id: 21,
@@ -150,6 +170,7 @@ const productsArray = [
 		category: "mexicana",
 		img: "./assets/img/products/tacosVeggie.jgp",
 		popular:true,
+		price: 1000,
 	},
 	{
 		id: 22,
@@ -157,6 +178,7 @@ const productsArray = [
 		category: "mexicana",
 		img: "./assets/img/products/quesadilla.jpg",
 		popular:false,
+		price: 600,
 	},
 	{
 		id: 23,
@@ -164,6 +186,7 @@ const productsArray = [
 		category: "mexicana",
 		img: "./assets/img/products/nachosCheddar.webp",
 		popular:false,
+		price: 780,
 	},
 	{
 		id: 24,
@@ -171,6 +194,7 @@ const productsArray = [
 		category: "mexicana",
 		img: "./assets/img/products/nachosBeans.jpg",
 		popular:false,
+		price: 950,
 	},
 	{
 		id: 25,
@@ -178,6 +202,7 @@ const productsArray = [
 		category: "batido",
 		img: "./assets/img/products/shakeStrawberry.webp",
 		popular:false,
+		price: 600,
 	},
 	{
 		id: 26,
@@ -185,6 +210,7 @@ const productsArray = [
 		category: "batido",
 		img: "./assets/img/products/shakeChocolate.jgp",
 		popular:true,
+		price: 600,
 	},
 	{
 		id: 27,
@@ -192,6 +218,7 @@ const productsArray = [
 		category: "batido",
 		img: "./assets/img/products/shakeSprinkle.webp",
 		popular:false,
+		price: 600,
 	},
 	{
 		id: 28,
@@ -199,5 +226,6 @@ const productsArray = [
 		category: "batido",
 		img: "./assets/img/products/shakeMashmellow.jgp",
 		popular:true,
+		price: 600,
 	},
 ];
