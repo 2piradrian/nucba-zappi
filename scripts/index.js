@@ -221,8 +221,6 @@ const getItemInfo = (e) => {
 	checkBeforeToAdd(itemSelected);
 };
 
-// -->  Carrito  <-- //
-
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
