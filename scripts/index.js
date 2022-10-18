@@ -22,7 +22,7 @@ const openCloseBurguerMenu = () => {
 };
 
 const renderNoPopulars = (noPopularsArray, current) => {
-	mostPopularContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
+	menuContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
 };
 
 const showLessFunction = (array) => {
@@ -53,7 +53,7 @@ const showFourMore = (arrayOfObjects) => {
 
 //funcion de renderizado de los más populares en HTML.
 const renderMostPopulars = (mostPopularsArray) => {
-	mostPopularContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
 };
 
 // funcion solo para desestructurar los objs.
@@ -126,6 +126,12 @@ const getPrices = () => {
 	subtotal.textContent = "--";
 	envio.textContent = "--";
 	*/
+};
+
+const closeMenuTargetDetect = () => {
+	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
+		closeCartMenu();
+	}
 };
 
 // Funcion que obtiene el elemento y lo añade al carro
