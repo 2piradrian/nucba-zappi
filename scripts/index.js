@@ -145,8 +145,14 @@ const incrementQuantity = (idProduct) => {
 			return item;
 		}
 	});
-	cartRender();
+	deleteItem();
+};
+
+// Funcion que borra el item si la cantidad es cero
+const deleteItem = () => {
+	cart = cart.filter((item) => item.quantity);
 	saveToLocalStorage(cart);
+	cartRender();
 };
 
 // Funcion que decrementa la cantidad del item en el carrito
@@ -154,13 +160,16 @@ const decrementQuantity = (idProduct) => {
 	cart = cart.map((item) => {
 		if (item.id == idProduct) {
 			item.quantity--;
+			if (!item.quantity) {
+				console.log("aaa");
+				deleteItem(idProduct);
+			}
 			return item;
 		} else {
 			return item;
 		}
 	});
-	cartRender();
-	saveToLocalStorage(cart);
+	deleteItem();
 };
 
 // Funcion que alerta si un elemento ya está en el carrito
@@ -176,11 +185,27 @@ const addToCart = (itemSelected) => {
 	saveToLocalStorage(cart);
 };
 
+// Funcion que verifica antes de agregar el item
+const checkBeforeToAdd = (itemSelected) => {
+	if (!cart.length) {
+		addToCart(itemSelected);
+	} else {
+		cart.map((item) => {
+			if (item.id == itemSelected.id) {
+				console.log("empanadas");
+				alertCart();
+			} else {
+				console.log(itemSelected);
+				addToCart(itemSelected);
+			}
+		});
+	}
+};
+
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
 	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
-	console.log(itemSelected);
 
 	if (e.target.classList.contains("pedido-button-less")) {
 		return decrementQuantity(idProduct);
@@ -190,7 +215,7 @@ const getItemInfo = (e) => {
 		return;
 	}
 
-	cart.includes(itemSelected) ? alertCart() : addToCart(itemSelected);
+	checkBeforeToAdd(itemSelected);
 };
 
 // -->  Carrito  <-- //
@@ -225,10 +250,12 @@ const init = () => {
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	document.addEventListener("click", (e) => closeMenuTargetDetect);
-	menuContainer.addEventListener("click", addToCart);
 	showMoreButton.addEventListener("click", () => showFourMore(productsArray));
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
+	menuContainer.addEventListener("click", getItemInfo);
+	cartMenuContainer.addEventListener("click", getItemInfo);
 };
 cartRender();
+
 init();

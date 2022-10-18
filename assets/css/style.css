@@ -74,14 +74,14 @@ ul {
 	display: none;
 }
 
-#burguerMenu{
+#burguerMenu {
 	cursor: pointer;
 }
 /* navbar para insertar con JS al hacer click en el menú hamburguesa */
 
 #navbarMenu {
 	flex-direction: column;
-	width:50%;
+	width: 50%;
 	height: 300px;
 	background-color: var(--background);
 	border: 3px solid var(--main);
@@ -228,7 +228,7 @@ main {
 	gap: 20px;
 }
 
-.filteredTitleContainer{
+.filteredTitleContainer {
 	display: flex;
 	justify-content: left;
 	width: 100%;
@@ -427,8 +427,6 @@ main {
 
 .buttons-pedido-container > .pedido-button-less {
 	background: linear-gradient(98.81deg, #ffa100 -0.82%, #ffa100 -0.81%, #ff005c 101.53%);
-	mix-blend-mode: normal;
-	opacity: 0.1;
 	border-radius: 8px;
 	color: white;
 	width: 20px;
@@ -632,91 +630,90 @@ main {
 }
 
 .recommendedApp {
-  padding: 2.5rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	padding: 2.5rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
-  gap: 30px;
+	gap: 30px;
 }
 
 .recommendedContainer {
-  max-width: 350px;
+	max-width: 350px;
 	width: 100%;
-  padding: 10px 15px;
-  background: var(--itemBackground);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+	padding: 10px 15px;
+	background: var(--itemBackground);
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
 }
 
 .recommendedContainer > img {
-  max-width: 62px;
-  width: 100%;
+	max-width: 62px;
+	width: 100%;
 }
 
 .recommendedTitle {
-  display: block;
+	display: block;
 }
 
 .recommendedParap {
-  opacity: 0.3;
-  display: block;
+	opacity: 0.3;
+	display: block;
 }
 
 .recommendedBtn > button {
-  border: none;
-  border-radius: 15px;
-  padding: 5px 10px;
-  background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
-  color: var(--contrast);
-  font-weight: 600;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px;
+	background: linear-gradient(98.81deg, #ffa100 -0.82%, #ff005c 101.53%);
+	color: var(--contrast);
+	font-weight: 600;
 }
 
 .recommendedTitle {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .recommendedParap {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .recommendedPrice {
-  font-weight: 900;
-  font-size: 1.2rem;
-  background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	font-weight: 900;
+	font-size: 1.2rem;
+	background: linear-gradient(98.81deg, #ffa100 -0.82%, #ff005c 101.53%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding: 3rem;
 }
 
 .footerTerms > a {
 	text-decoration: none;
 	color: var(--contrast);
-  padding: 3rem;
-  font-weight: 400;
+	padding: 3rem;
+	font-weight: 400;
 }
 
 .footerCopy {
-  padding-top: 3.5rem;
-  font-weight: 400;
+	padding-top: 3.5rem;
+	font-weight: 400;
 }
 
 .strong {
-  font-weight: 900;
+	font-weight: 900;
 }
-
 
 @media screen and (min-width: 570px) {
 	.bigTitle {
@@ -736,15 +733,15 @@ main {
 		height: 200px;
 	}
 
-	header{
+	header {
 		height: 150px;
 	}
 
-	#navbarMenu{
+	#navbarMenu {
 		top: 150px;
 	}
 
-	.logoContainer{
+	.logoContainer {
 		max-width: 78px;
 	}
 }
@@ -753,24 +750,24 @@ main {
 		padding: 0 110px 0 75px;
 	}
 
-	nav{
+	nav {
 		width: 30%;
 		max-width: 500px;
 	}
 	#navbarMenu {
 		display: flex;
 		flex-direction: row;
-		width:100%;
+		width: 100%;
 		height: 150px;
 		gap: 20px;
 		background-color: var(--background);
 		border: none;
-		align-items:center;
+		align-items: center;
 		justify-content: space-between;
 		position: relative;
 		top: 0px;
 		right: 0px;
-		padding-left:initial;
+		padding-left: initial;
 	}
 
 	.burguerContainer {
