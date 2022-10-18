@@ -58,7 +58,7 @@ const renderMostPopulars = (mostPopularsArray) => {
 
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj) => {
-	const { name, img, price, subtitle, popular } = popularObj;
+	const { id, name, img, price, subtitle, popular } = popularObj;
 	return `
 	<div class="itemContainer">
 		<h2 class="popular-h2 ${popular ? "" : "disabled"}">Popular</h2>
@@ -68,7 +68,7 @@ const desestructuringPopulars = (popularObj) => {
 				<p class="itemSubtitle">${subtitle}</p>
 			<div class="itemBuy">
 				<p class="price">$ ${price}</p>
-				<button class="addToCart">Agregar</button>
+				<button class="addToCart" data-id=${id}>Agregar</button>
 			</div>
 			</div>
 	</div>
@@ -129,14 +129,17 @@ const getPrices = () => {
 };
 
 // Funcion que obtiene el elemento y lo añade al carro
-const addToCart = () => {};
+const addToCart = (e) => {
+	if (!e.target.classList.contains("addToCart")) return;
+	const idProduct = e.target.dataset.id;
+	console.log(idProduct);
+};
 
 // -->  Carrito  <-- //
 
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
-	console.log(clickData);
 	menuContainer.innerHTML = "";
 	if (clickData) {
 		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
@@ -158,6 +161,7 @@ const renderMenu = (e) => {
 		);
 	}
 };
+
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
@@ -167,10 +171,10 @@ const init = () => {
 			closeCartMenu();
 		}
 	});
-	// document.addEventListener("click", renderMenu);
-	filterMostPopulars(productsArray);
-	cartRender();
+	menuContainer.addEventListener("click", addToCart);
 	showMoreButton.addEventListener("click", showFourMore(productsArray));
 	showLessButton.addEventListener("click", showLessFunction(filterMostPopulars(productsArray)));
+	filterMostPopulars(productsArray);
+	cartRender();
 };
 init();
