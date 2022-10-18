@@ -19,11 +19,13 @@ const renderNoPopulars=(noPopularsArray, current)=>{
 const showFourMore = (arrayOfObjects) => {
 	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
 	const result = [];
-	for (let i = 0; i <= noPopularRest.length; i += 4) {
-		result.push(noPopularRest.slice(i, i + 4));
+	const size = 4;
+	for (let i = 0; i <= noPopularRest.length; i += size) {
+		result.push(noPopularRest.slice(i, i + size));
 	}
 	renderNoPopulars(result, navigator.current);
-	navigator.current = navigator.current + 1;
+	navigator.current < (result.length - 2) ? navigator.current = navigator.current + 1 : showMoreButton.classList.add('disabled');
+	
 };
 
 //funcion de renderizado de los más populares en HTML.
