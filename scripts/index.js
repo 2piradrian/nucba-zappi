@@ -169,17 +169,14 @@ const renderMenu = (e) => {
 };
 
 const init = () => {
+	
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) => {
-		if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-			closeCartMenu();
-		}
-	});
+	document.addEventListener("click", (e) => closeMenuTargetDetect);
 	menuContainer.addEventListener("click", addToCart);
-	showMoreButton.addEventListener("click", showFourMore(productsArray));
-	showLessButton.addEventListener("click", showLessFunction(filterMostPopulars(productsArray)));
+	showMoreButton.addEventListener("click", ()=> showFourMore(productsArray));
+	showLessButton.addEventListener("click",()=> showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	cartRender();
 };
