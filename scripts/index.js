@@ -138,7 +138,7 @@ const addToCart = () => {};
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
 	console.log(clickData);
-	menu.innerHTML = "";
+	menuContainer.innerHTML = "";
 	if (clickData) {
 		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
 		console.log(obtainProduct);
