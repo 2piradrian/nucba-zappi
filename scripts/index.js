@@ -13,32 +13,32 @@ const closeCartMenu = () => {
 };
 
 // Mostrar menu hamburguesa
-const openCloseBurguerMenu = ()  => {
+const openCloseBurguerMenu = () => {
 	if (navbarMenu.style.display === "flex") {
-		navbarMenu.style.display = "none"
+		navbarMenu.style.display = "none";
 	} else {
-		navbarMenu.style.display = "flex"
+		navbarMenu.style.display = "flex";
 	}
-}
+};
 
-const renderNoPopulars=(noPopularsArray, current)=>{
-	mostPopularContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
-}
+const renderNoPopulars = (noPopularsArray, current) => {
+	menuContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
+};
 
-const showLessFunction = (array)=>{
+const showLessFunction = (array) => {
 	showButtonMore();
 	renderMostPopulars(array[0], 0);
-}
+};
 
-const showButtonMore = ()=>{
-	showMoreButton.classList.remove('disabled');
-	showLessButton.classList.add('disabled');
-}
-const showButtonLess = ()=>{
+const showButtonMore = () => {
+	showMoreButton.classList.remove("disabled");
+	showLessButton.classList.add("disabled");
+};
+const showButtonLess = () => {
 	navigator.current = 0;
-	showMoreButton.classList.add('disabled');
-	showLessButton.classList.remove('disabled');
-}
+	showMoreButton.classList.add("disabled");
+	showLessButton.classList.remove("disabled");
+};
 
 const showFourMore = (arrayOfObjects) => {
 	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
@@ -48,13 +48,12 @@ const showFourMore = (arrayOfObjects) => {
 		result.push(noPopularRest.slice(i, i + size));
 	}
 	renderNoPopulars(result, navigator.current);
-	navigator.current < (result.length - 2) ? navigator.current = navigator.current + 1 : showButtonLess();
-	
+	navigator.current < result.length - 2 ? (navigator.current = navigator.current + 1) : showButtonLess();
 };
 
 //funcion de renderizado de los más populares en HTML.
 const renderMostPopulars = (mostPopularsArray) => {
-	mostPopularContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
 };
 
 // funcion solo para desestructurar los objs.
@@ -62,7 +61,7 @@ const desestructuringPopulars = (popularObj) => {
 	const { name, img, price, subtitle, popular } = popularObj;
 	return `
 	<div class="itemContainer">
-		<h2 class="popular-h2 ${popular ? '' : 'disabled'}">Popular</h2>
+		<h2 class="popular-h2 ${popular ? "" : "disabled"}">Popular</h2>
 		<img src="${img}" alt="imagen del item" srcset="" />
 			<div class="itemDescription">
 				<h3 class="itemTitle">${name}</h3>
@@ -129,6 +128,12 @@ const getPrices = () => {
 	*/
 };
 
+const closeMenuTargetDetect = ()=>{
+	if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
+		closeCartMenu();
+	}
+}
+
 // Funcion que obtiene el elemento y lo añade al carro
 const addToCart = () => {};
 
@@ -163,15 +168,11 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) => {
-		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {closeCartMenu();}
-	});
+	document.addEventListener("click", (e) =>closeMenuTargetDetect);
 	// document.addEventListener("click", renderMenu);
 	filterMostPopulars(productsArray);
 	cartRender();
-	showMoreButton.addEventListener('click', (e)=> showFourMore(productsArray));
-	showLessButton.addEventListener('click', (e) => {
-		showLessFunction(filterMostPopulars(productsArray));
-	})
+	showMoreButton.addEventListener("click", showFourMore(productsArray));
+	showLessButton.addEventListener("click", showLessFunction(filterMostPopulars(productsArray)));
 };
 init();
