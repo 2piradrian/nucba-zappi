@@ -173,7 +173,7 @@ const addToCart = (itemSelected) => {
 	const withQuantity = { ...itemSelected, quantity: 1 };
 	cart.push(withQuantity);
 	cartRender();
-	aveToLocalStorage(cart);
+	saveToLocalStorage(cart);
 };
 
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
