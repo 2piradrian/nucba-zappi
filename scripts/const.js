@@ -13,6 +13,10 @@ const mostPopularContainer = document.querySelector("#mostPopularContainer");
 const showMoreButton = document.querySelector("#showMoreButton");
 const menuContainer = document.getElementById("mostPopularContainer"); 
 
+let navigator = {
+	current: 0,
+	prev: null,
+}
 
 const cart = [];
 
@@ -25,6 +29,7 @@ const productsArray = [
 		popular: true,
 		price: 1250,
 		subtitle: "Solo para expertos",
+		
 	},
 	{
 		id: 2,
@@ -34,6 +39,7 @@ const productsArray = [
 		popular: false,
 		price: 1400,
 		subtitle: "Peperoni papá",
+		
 	},
 	{
 		id: 3,
@@ -43,6 +49,7 @@ const productsArray = [
 		popular: true,
 		price: 1250,
 		subtitle: "Jamoncituuuu",
+		
 	},
 	{
 		id: 4,
@@ -52,6 +59,7 @@ const productsArray = [
 		popular: false,
 		price: 1100,
 		subtitle: "Re vegano pa",
+		
 	},
 	{
 		id: 5,
@@ -61,6 +69,7 @@ const productsArray = [
 		popular: true,
 		price: 1430,
 		subtitle: "Quesito",
+		
 	},
 	{
 		id: 6,
@@ -70,6 +79,7 @@ const productsArray = [
 		popular: false,
 		price: 1290,
 		subtitle: "Dale que sos vos",
+		
 	},
 	{
 		id: 7,
@@ -79,6 +89,7 @@ const productsArray = [
 		popular: true,
 		price: 800,
 		subtitle: "Esoo es lindo che",
+		
 	},
 	{
 		id: 8,
@@ -88,6 +99,7 @@ const productsArray = [
 		popular: true,
 		price: 750,
 		subtitle: "Queso nomás",
+		
 	},
 	{
 		id: 9,
@@ -97,6 +109,7 @@ const productsArray = [
 		popular: false,
 		price: 750,
 		subtitle: "Upaa!!",
+		
 	},
 	{
 		id: 10,
@@ -106,6 +119,7 @@ const productsArray = [
 		popular: true,
 		price: 850,
 		subtitle: "Juega bastante",
+		
 	},
 	{
 		id: 11,
@@ -115,6 +129,7 @@ const productsArray = [
 		popular: false,
 		price: 850,
 		subtitle: "Muy ricasss",
+		
 	},
 	{
 		id: 12,
@@ -124,6 +139,7 @@ const productsArray = [
 		popular: false,
 		price: 700,
 		subtitle: "Lentejuelas",
+		
 	},
 	{
 		id: 13,
@@ -133,6 +149,7 @@ const productsArray = [
 		popular: true,
 		price: 700,
 		subtitle: "Salen fritas",
+		
 	},
 	{
 		id: 14,
@@ -142,6 +159,7 @@ const productsArray = [
 		popular: false,
 		price: 800,
 		subtitle: "Cheddar",
+		
 	},
 	{
 		id: 15,
@@ -151,6 +169,7 @@ const productsArray = [
 		popular: false,
 		price: 750,
 		subtitle: "Ta que arde",
+		
 	},
 	{
 		id: 16,
@@ -160,6 +179,7 @@ const productsArray = [
 		popular: true,
 		price: 1000,
 		subtitle: "Riquisimo",
+		
 	},
 	{
 		id: 17,
@@ -169,6 +189,7 @@ const productsArray = [
 		popular: false,
 		price: 1000,
 		subtitle: "Clasico",
+		
 	},
 	{
 		id: 18,
@@ -178,6 +199,7 @@ const productsArray = [
 		popular: false,
 		price: 900,
 		subtitle: "Tradicional",
+		
 	},
 	{
 		id: 19,
@@ -187,6 +209,7 @@ const productsArray = [
 		popular: false,
 		price: 950,
 		subtitle: "Veggie",
+		
 	},
 	{
 		id: 20,
@@ -196,6 +219,7 @@ const productsArray = [
 		popular: true,
 		price: 1250,
 		subtitle: "A lo mexicano",
+		
 	},
 	{
 		id: 21,
@@ -205,6 +229,7 @@ const productsArray = [
 		popular: true,
 		price: 1000,
 		subtitle: "Veggie mexico",
+		
 	},
 	{
 		id: 22,
@@ -214,6 +239,7 @@ const productsArray = [
 		popular: false,
 		price: 600,
 		subtitle: "Un lujo",
+		
 	},
 	{
 		id: 23,
@@ -223,6 +249,7 @@ const productsArray = [
 		popular: false,
 		price: 780,
 		subtitle: "Caseros",
+		
 	},
 	{
 		id: 24,
@@ -232,6 +259,7 @@ const productsArray = [
 		popular: false,
 		price: 950,
 		subtitle: "Completos",
+		
 	},
 	{
 		id: 25,
@@ -241,6 +269,7 @@ const productsArray = [
 		popular: false,
 		price: 600,
 		subtitle: "Postre",
+		
 	},
 	{
 		id: 26,
@@ -250,6 +279,7 @@ const productsArray = [
 		popular: true,
 		price: 600,
 		subtitle: "Postre",
+		
 	},
 	{
 		id: 27,
@@ -259,6 +289,7 @@ const productsArray = [
 		popular: false,
 		price: 600,
 		subtitle: "Postre",
+
 	},
 	{
 		id: 28,
@@ -268,6 +299,7 @@ const productsArray = [
 		popular: true,
 		price: 600,
 		subtitle: "Postre",
+
 	},
 ];
 

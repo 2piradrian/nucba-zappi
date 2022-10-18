@@ -12,12 +12,18 @@ const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
 };
 
+const renderNoPopulars=(noPopularsArray, current)=>{
+	mostPopularContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
+}
+
 const showFourMore = (arrayOfObjects) => {
 	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
 	const result = [];
 	for (let i = 0; i <= noPopularRest.length; i += 4) {
 		result.push(noPopularRest.slice(i, i + 4));
 	}
+	renderNoPopulars(result, navigator.current);
+	navigator.current = navigator.current + 1;
 };
 
 //funcion de renderizado de los más populares en HTML.
@@ -28,10 +34,9 @@ const renderMostPopulars = (mostPopularsArray) => {
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj) => {
 	const { name, img, price, subtitle, popular } = popularObj;
-
 	return `
 	<div class="itemContainer">
-		<h2 class="popular-h2 ${popular ? "" : "disabled"}">Popular</h2>
+		<h2 class="popular-h2 ${popular ? '' : 'disabled'}">Popular</h2>
 		<img src="${img}" alt="imagen del item" srcset="" />
 			<div class="itemDescription">
 				<h3 class="itemTitle">${name}</h3>
@@ -131,12 +136,11 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	document.addEventListener("click", (e) => {
-		if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-			closeCartMenu();
-		}
+		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {closeCartMenu();}
 	});
-	document.addEventListener("click", renderMenu);
+	// document.addEventListener("click", renderMenu);
 	filterMostPopulars(productsArray);
 	cartRender();
+	showMoreButton.addEventListener('click', (e)=> showFourMore(productsArray));
 };
 init();

@@ -254,7 +254,7 @@ main {
 	background: linear-gradient(90deg, var(--main), var(--secondary));
 }
 .disabled {
-	display: none;
+	visibility: hidden;
 }
 .itemContainer img {
 	height: auto;
