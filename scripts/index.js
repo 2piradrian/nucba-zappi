@@ -12,6 +12,15 @@ const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
 };
 
+// Mostrar menu hamburguesa
+const openCloseBurguerMenu = ()  => {
+	if (navbarMenu.style.display === "flex") {
+		navbarMenu.style.display = "none"
+	} else {
+		navbarMenu.style.display = "flex"
+	}
+}
+
 const renderNoPopulars=(noPopularsArray, current)=>{
 	mostPopularContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
 }
@@ -153,6 +162,7 @@ const renderMenu = (e) => {
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
+	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	document.addEventListener("click", (e) => {
 		if(!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {closeCartMenu();}
 	});

@@ -17,12 +17,12 @@
 			</div>
 
 			<nav>
-				<div class="burguerContainer">
+				<div class="burguerContainer" id="burguerMenu">
 					<span>
 						<i class="fa-solid fa-bars fa-2x"></i>
 					</span>
 				</div>
-				<ul>
+				<ul id="navbarMenu">
 					<li>
 						<a href="#">
 							<div class="homeContainer">
@@ -217,7 +217,9 @@
 					</div>
 				</section>
 				<section class="appFiltered">
-					<h2 class="filteredTitle">Los más populares</h2>
+					<div class="filteredTitleContainer">
+						<h2 class="filteredTitle">Los más populares</h2>
+					</div>
 					<div class="cardContainer" id="mostPopularContainer"></div>
 					<button id="showMoreButton" class="showMoreButton">Mostrar más</button>
 					<button id="showLess" class="showMoreButton disabled">Mostrar menos</button>
