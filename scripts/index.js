@@ -16,6 +16,21 @@ const renderNoPopulars=(noPopularsArray, current)=>{
 	mostPopularContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
 }
 
+const showLessFunction = (array)=>{
+	showButtonMore();
+	renderMostPopulars(array[0], 0);
+}
+
+const showButtonMore = ()=>{
+	showMoreButton.classList.remove('disabled');
+	showLessButton.classList.add('disabled');
+}
+const showButtonLess = ()=>{
+	navigator.current = 0;
+	showMoreButton.classList.add('disabled');
+	showLessButton.classList.remove('disabled');
+}
+
 const showFourMore = (arrayOfObjects) => {
 	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
 	const result = [];
@@ -24,7 +39,7 @@ const showFourMore = (arrayOfObjects) => {
 		result.push(noPopularRest.slice(i, i + size));
 	}
 	renderNoPopulars(result, navigator.current);
-	navigator.current < (result.length - 2) ? navigator.current = navigator.current + 1 : showMoreButton.classList.add('disabled');
+	navigator.current < (result.length - 2) ? navigator.current = navigator.current + 1 : showButtonLess();
 	
 };
 
@@ -56,6 +71,7 @@ const desestructuringPopulars = (popularObj) => {
 const filterMostPopulars = (arrayOfObjects) => {
 	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
 	renderMostPopulars(mostPopularFiltered);
+	return mostPopularFiltered;
 };
 
 // Renderiza los elementos en el carrito
@@ -144,5 +160,8 @@ const init = () => {
 	filterMostPopulars(productsArray);
 	cartRender();
 	showMoreButton.addEventListener('click', (e)=> showFourMore(productsArray));
+	showLessButton.addEventListener('click', (e) => {
+		showLessFunction(filterMostPopulars(productsArray));
+	})
 };
 init();

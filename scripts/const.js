@@ -11,6 +11,7 @@ const closeButton = document.querySelector("#closeButton");
 // Body
 const mostPopularContainer = document.querySelector("#mostPopularContainer");
 const showMoreButton = document.querySelector("#showMoreButton");
+const showLessButton = document.querySelector('#showLess')
 const menuContainer = document.getElementById("mostPopularContainer"); 
 
 let navigator = {
