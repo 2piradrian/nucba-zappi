@@ -131,6 +131,9 @@ const getPrices = () => {
 	}
 
 	subtotal.textContent = precio;
+	if (!cart.length) {
+		cleanPrices();
+	}
 };
 
 const closeMenuTargetDetect = (e) => {
@@ -150,7 +153,6 @@ const incrementQuantity = (idProduct) => {
 		}
 	});
 	deleteItem();
-	
 };
 
 // Funcion que borra el item si la cantidad es cero
@@ -218,7 +220,7 @@ const getItemInfo = (e) => {
 	} else if (!e.target.classList.contains("addToCart")) {
 		return;
 	}
-	
+
 	checkBeforeToAdd(itemSelected);
 };
 
@@ -250,7 +252,7 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) =>closeMenuTargetDetect(e));
+	document.addEventListener("click", (e) => closeMenuTargetDetect(e));
 	showMoreButton.addEventListener("click", () => showFourMore(productsArray));
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
