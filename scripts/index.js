@@ -160,7 +160,7 @@ const decrementQuantity = (idProduct) => {
 		}
 	});
 	cartRender();
-	aveToLocalStorage(cart);
+	saveToLocalStorage(cart);
 };
 
 // Funcion que alerta si un elemento ya está en el carrito
@@ -180,6 +180,7 @@ const addToCart = (itemSelected) => {
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
 	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
+	console.log(itemSelected);
 
 	if (e.target.classList.contains("pedido-button-less")) {
 		return decrementQuantity(idProduct);
