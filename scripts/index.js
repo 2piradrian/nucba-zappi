@@ -6,6 +6,7 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
+	getPrices();
 };
 // Ocultar carrito de compras
 const closeCartMenu = () => {
@@ -114,19 +115,22 @@ const cartRender = () => {
 		cleanPrices();
 		return;
 	}
-	console.log(cart);
 	itemsCartSelected.innerHTML = cart.map(renderCartList).join("");
 };
 
 // Multiplica precio por cantidad y va acumulando para obtener el subtotal
 const getPrices = () => {
-	cart.reduce((acc, cur) => acc + Number(cur.price) * Number(cur.quantity), 0);
-	/* 
-	Me queda pendiente renderizar los precios 
-	total.textContent = "--";
-	subtotal.textContent = "--";
-	envio.textContent = "--";
-	*/
+	const precio = cart.reduce((acc, cur) => acc + Number(cur.price) * Number(cur.quantity), 0);
+	let envio;
+	if (precio > 5000) {
+		envio = "Gratis";
+		total.textContent = precio;
+	} else {
+		envio = 500;
+		total.textContent = precio + envio;
+	}
+
+	subtotal.textContent = precio;
 };
 
 const closeMenuTargetDetect = () => {
@@ -151,6 +155,7 @@ const incrementQuantity = (idProduct) => {
 // Funcion que borra el item si la cantidad es cero
 const deleteItem = () => {
 	cart = cart.filter((item) => item.quantity);
+	getPrices();
 	saveToLocalStorage(cart);
 	cartRender();
 };
@@ -161,7 +166,6 @@ const decrementQuantity = (idProduct) => {
 		if (item.id == idProduct) {
 			item.quantity--;
 			if (!item.quantity) {
-				console.log("aaa");
 				deleteItem(idProduct);
 			}
 			return item;
@@ -181,6 +185,7 @@ const alertCart = () => {
 const addToCart = (itemSelected) => {
 	const withQuantity = { ...itemSelected, quantity: 1 };
 	cart.push(withQuantity);
+	getPrices();
 	cartRender();
 	saveToLocalStorage(cart);
 };
@@ -192,10 +197,8 @@ const checkBeforeToAdd = (itemSelected) => {
 	} else {
 		cart.map((item) => {
 			if (item.id == itemSelected.id) {
-				console.log("empanadas");
 				alertCart();
 			} else {
-				console.log(itemSelected);
 				addToCart(itemSelected);
 			}
 		});
@@ -226,7 +229,6 @@ const renderMenu = (e) => {
 	menuContainer.innerHTML = "";
 	if (clickData) {
 		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
-		console.log(obtainProduct);
 		renderProduct = obtainProduct.map(
 			(object) =>
 				(menuContainer.innerHTML += `<div class="itemContainer">
