@@ -1,7 +1,7 @@
 // Funcion para guardar carrito en local storage
-let carrito = JSON.parse(localStorage.getItem("cart")) || [];
-const saveToLocalStorage = (carrito) => {
-	localStorage.setItem("carrito", JSON.stringify(carrito));
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const saveToLocalStorage = (cart) => {
+	localStorage.setItem("cart", JSON.stringify(cart));
 };
 // Mostrar carrito de compras
 const showCartMenu = () => {
@@ -100,7 +100,7 @@ const renderCartList = (product) => {
 	`;
 };
 
-// Vacia los precion en caso de no haber productos
+// Vacia los precios en caso de no haber productos
 const cleanPrices = () => {
 	total.textContent = "--";
 	subtotal.textContent = "--";
@@ -114,6 +114,7 @@ const cartRender = () => {
 		cleanPrices();
 		return;
 	}
+	console.log(cart);
 	itemsCartSelected.innerHTML = cart.map(renderCartList).join("");
 };
 
@@ -134,11 +135,61 @@ const closeMenuTargetDetect = () => {
 	}
 };
 
-// Funcion que obtiene el elemento y lo añade al carro
-const addToCart = (e) => {
-	if (!e.target.classList.contains("addToCart")) return;
+// Funcion que incrementa la cantidad del item en el carrito
+const incrementQuantity = (idProduct) => {
+	cart = cart.map((item) => {
+		if (item.id == idProduct) {
+			item.quantity++;
+			return item;
+		} else {
+			return item;
+		}
+	});
+	cartRender();
+	saveToLocalStorage(cart);
+};
+
+// Funcion que decrementa la cantidad del item en el carrito
+const decrementQuantity = (idProduct) => {
+	cart = cart.map((item) => {
+		if (item.id == idProduct) {
+			item.quantity--;
+			return item;
+		} else {
+			return item;
+		}
+	});
+	cartRender();
+	aveToLocalStorage(cart);
+};
+
+// Funcion que alerta si un elemento ya está en el carrito
+const alertCart = () => {
+	return alert("El item seleccionado ya se encuentra dentro del carrito.");
+};
+
+// Añade el item a el carrito
+const addToCart = (itemSelected) => {
+	const withQuantity = { ...itemSelected, quantity: 1 };
+	cart.push(withQuantity);
+	cartRender();
+	aveToLocalStorage(cart);
+};
+
+// Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
+const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
-	console.log(idProduct);
+	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
+
+	if (e.target.classList.contains("pedido-button-less")) {
+		return decrementQuantity(idProduct);
+	} else if (e.target.classList.contains("pedido-button-plus")) {
+		return incrementQuantity(idProduct);
+	} else if (!e.target.classList.contains("addToCart")) {
+		return;
+	}
+
+	cart.includes(itemSelected) ? alertCart() : addToCart(itemSelected);
 };
 
 // -->  Carrito  <-- //
@@ -177,10 +228,11 @@ const init = () => {
 			closeCartMenu();
 		}
 	});
-	menuContainer.addEventListener("click", addToCart);
+	menuContainer.addEventListener("click", getItemInfo);
+	cartMenuContainer.addEventListener("click", getItemInfo);
 	showMoreButton.addEventListener("click", showFourMore(productsArray));
 	showLessButton.addEventListener("click", showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
-	cartRender();
 };
+cartRender();
 init();
