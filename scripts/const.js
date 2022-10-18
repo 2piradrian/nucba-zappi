@@ -4,7 +4,7 @@ const itemsCartSelected = document.querySelector(".items-cart-container");
 const subtotal = document.querySelector(".precio-span-subtotal");
 const total = document.querySelector(".total-span-precio");
 const envio = document.querySelector(".precio-span-envio");
-
+const containerLessAndMore = document.querySelector('#containerLessAndMore');
 // Menu Hamb
 const burguerIcon = document.getElementById("burguerMenu");
 const navbarMenu = document.querySelector("#navbarMenu");

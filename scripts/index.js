@@ -92,7 +92,7 @@ const renderCartList = (product) => {
 			<h3 class="items-cart-title">${name}</h3>
 			<span class="items-cart-second-title">${subtitle}</span>
 			<span class="items-cart-precio">$${price}</span>
-			<div class="buttons-pedido-container">
+			<div class="buttons-pedido-container" id="containerLessAndMore">
 				<button class="pedido-button-less" data-id=${id}>-</button>
 				<span class="pedido-value">${quantity}</span>
 				<button class="pedido-button-plus" data-id=${id}>+</button>
@@ -133,7 +133,7 @@ const getPrices = () => {
 	subtotal.textContent = precio;
 };
 
-const closeMenuTargetDetect = () => {
+const closeMenuTargetDetect = (e) => {
 	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
 		closeCartMenu();
 	}
@@ -150,6 +150,7 @@ const incrementQuantity = (idProduct) => {
 		}
 	});
 	deleteItem();
+	
 };
 
 // Funcion que borra el item si la cantidad es cero
@@ -217,7 +218,7 @@ const getItemInfo = (e) => {
 	} else if (!e.target.classList.contains("addToCart")) {
 		return;
 	}
-
+	
 	checkBeforeToAdd(itemSelected);
 };
 
@@ -249,7 +250,7 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) => closeMenuTargetDetect);
+	document.addEventListener("click", (e) =>closeMenuTargetDetect(e));
 	showMoreButton.addEventListener("click", () => showFourMore(productsArray));
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
