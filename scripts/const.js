@@ -14,6 +14,7 @@ const navbarMenu = document.querySelector("#navbarMenu");
 // Nav
 const cartNavIcon = document.querySelector("#cart_nav_icon");
 const closeButton = document.querySelector("#closeButton");
+const productsCounterIcon = document.querySelector("#productsCounterIcon");
 // Body
 const showMoreButton = document.querySelector("#showMoreButton");
 const showLessButton = document.querySelector("#showLess");

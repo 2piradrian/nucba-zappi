@@ -135,10 +135,31 @@ nav div i {
 	width: 22px;
 	align-items: center;
 	gap: 1px;
+	position: relative;
 }
 
 .cartContainer img {
 	max-width: 20px;
+}
+
+.productsCounterIcon{
+	height: 13px;
+    position: absolute;
+    background-color: var(--secondary);
+    border-radius: 50px;
+    width: 13px;
+    left: 16px;
+    top: -4px;
+    border: 1px solid var(--contrast);
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productsCounterIcon p {
+	font-size: 10px;
+	color: var(--contrast);
+	font-weight: 600;
 }
 
 .wheelsContainer {
