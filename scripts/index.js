@@ -258,6 +258,7 @@ const init = () => {
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
 	window.addEventListener('resize', showNavBar);
+	document.addEventListener("click", renderMenu);
 };
 cartRender();
 
