@@ -332,10 +332,10 @@ main {
 	height: 670px;
 	min-width: 400px;
 	width: 50%;
-	max-width: 500px;
+	max-width: 470px;
 	display: grid;
 	top: 5%;
-	left: 68%;
+	left: 65%;
 	grid-template-columns: 200px 200px;
 	grid-template-rows: 40px 80px 288px 50.5px 50.5px 118px 38.5px;
 	position: absolute;

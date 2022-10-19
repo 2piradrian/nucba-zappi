@@ -48,8 +48,8 @@ const showButtonLess = () => {
 	showLessButton.classList.remove("disabled");
 };
 
-const showFourMore = (arrayOfObjects) => {
-	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
+const showFourMore = () => {
+	const noPopularRest = productsArray.filter((e) => !e.popular);
 	const result = [];
 	const size = 4;
 	for (let i = 0; i <= noPopularRest.length; i += size) {
@@ -252,8 +252,8 @@ const init = () => {
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	document.addEventListener("click", (e) => closeMenuTargetDetect(e));
-	showMoreButton.addEventListener("click", () => showFourMore(productsArray));
-	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
+	showMoreButton.addEventListener("click",showFourMore);
+	showLessButton.addEventListener("click",()=>showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
