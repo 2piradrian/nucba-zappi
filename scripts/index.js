@@ -234,23 +234,15 @@ const getItemInfo = (e) => {
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
-	menuContainer.innerHTML = "";
-	if (clickData) {
-		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
+	if (clickData === "popular") {
+		filterMostPopulars(productsArray);
+	} else if (clickData) {
+		menuContainer.innerHTML = "";
+		const obtainProduct = productsArray.filter(
+			(objeto) => objeto.category === clickData
+		);
 		renderProduct = obtainProduct.map(
-			(object) =>
-				(menuContainer.innerHTML += `<div class="itemContainer">
-		<img src="${object.img}" alt="imagen del item" srcset="" />
-		<div class="itemDescription">
-			<h3 class="itemTittle>${object.name}</h3>
-			<p class="itemSubtittle">${object.subtitle}</p>
-			<div class="itemBuy">
-				<p class="price">$${object.price}</p>
-				<button class="addToCart">Agregar</button>
-			</div>
-		</div>
-	</div>
-	`)
+			(object) => (menuContainer.innerHTML += desestructuringPopulars(object))
 		);
 	}
 };
