@@ -26,7 +26,7 @@ const openCloseBurguerMenu = () => {
 const showNavBar = () => {
 	if (window.outerWidth > 900) {
 		navbarMenu.style.display= "flex"
-	}
+	} else navbarMenu.style.display= "none"
 }
 
 const renderNoPopulars = (noPopularsArray, current) => {
