@@ -60,8 +60,8 @@ const showButtonLess = () => {
 	showLessButton.classList.remove("disabled");
 };
 
-const showFourMore = (arrayOfObjects) => {
-	const noPopularRest = arrayOfObjects.filter((e) => !e.popular);
+const showFourMore = () => {
+	const noPopularRest = productsArray.filter((e) => !e.popular);
 	const result = [];
 	const size = 4;
 	for (let i = 0; i <= noPopularRest.length; i += size) {
@@ -112,9 +112,9 @@ const renderCartList = (product) => {
 			<span class="items-cart-second-title">${subtitle}</span>
 			<span class="items-cart-precio">$${price}</span>
 			<div class="buttons-pedido-container" id="containerLessAndMore">
-				<button class="pedido-button-less" data-id=${id}>-</button>
+				<button class="pedido-button-less" id="buttonLess" data-id=${id}>-</button>
 				<span class="pedido-value">${quantity}</span>
-				<button class="pedido-button-plus" data-id=${id}>+</button>
+				<button class="pedido-button-plus" id="buttonPlus" data-id=${id}>+</button>
 			</div>
 		</div>
 	`;
@@ -155,11 +155,12 @@ const getPrices = () => {
 	}
 };
 
-const closeMenuTargetDetect = (e) => {
-	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-		closeCartMenu();
-	}
-};
+// const closeMenuTargetDetect = (e) => {
+// 	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
+// 		closeCartMenu();
+// 		console.log("asd")
+// 	}
+// };
 
 // Funcion que incrementa la cantidad del item en el carrito
 const incrementQuantity = (idProduct) => {
@@ -264,8 +265,8 @@ const init = () => {
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	document.addEventListener("click", (e) => closeMenuTargetDetect(e));
-	showMoreButton.addEventListener("click", () => showFourMore(productsArray));
-	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
+	showMoreButton.addEventListener("click",showFourMore);
+	showLessButton.addEventListener("click",()=>showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
