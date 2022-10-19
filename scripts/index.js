@@ -13,6 +13,18 @@ const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
 };
 
+const closeCartMenuToScroll = () => {
+	window.onscroll = () => {
+		if(document.documentElement.scrollTop > 30) {
+			closeCartMenu()
+		} else {
+			return
+		}
+	}
+}
+
+closeCartMenuToScroll()
+
 // Mostrar menu hamburguesa
 const openCloseBurguerMenu = () => {
 	if (navbarMenu.style.display === "flex") {
