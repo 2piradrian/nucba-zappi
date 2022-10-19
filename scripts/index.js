@@ -100,9 +100,9 @@ const renderCartList = (product) => {
 			<span class="items-cart-second-title">${subtitle}</span>
 			<span class="items-cart-precio">$${price}</span>
 			<div class="buttons-pedido-container" id="containerLessAndMore">
-				<button class="pedido-button-less" data-id=${id}>-</button>
+				<button class="pedido-button-less" id="buttonLess" data-id=${id}>-</button>
 				<span class="pedido-value">${quantity}</span>
-				<button class="pedido-button-plus" data-id=${id}>+</button>
+				<button class="pedido-button-plus" id="buttonPlus" data-id=${id}>+</button>
 			</div>
 		</div>
 	`;
@@ -143,11 +143,12 @@ const getPrices = () => {
 	}
 };
 
-const closeMenuTargetDetect = (e) => {
-	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-		closeCartMenu();
-	}
-};
+// const closeMenuTargetDetect = (e) => {
+// 	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
+// 		closeCartMenu();
+// 		console.log("asd")
+// 	}
+// };
 
 // Funcion que incrementa la cantidad del item en el carrito
 const incrementQuantity = (idProduct) => {
