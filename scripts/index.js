@@ -281,7 +281,24 @@ const getItemInfo = (e) => {
 
   checkBeforeToAdd(itemSelected);
 };
+// let randomNums = (arrayfor = []);
 
+// for (let i = 0; i < 12; i++) {
+// 	let resultado = Math.floor(Math.random() * 28);
+// 	if (!arrayfor.includes(resultado)) {
+// 		arrayfor.push(resultado);
+// 	} else {
+// 		i--;
+// 	}
+// }
+// const randomProducts = () => {
+// 	menuContainer.innerHTML = "";
+// 	newPopular = productsArray.filter((objeto) => randomNums.includes(objeto.id));
+// 	console.log(newPopular);
+// 	renderNewPopular = newPopular.map(
+// 		(object) => (menuContainer.innerHTML += desestructuringPopulars(object))
+// 	);
+// };
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
   const clickData = e.target.dataset.type;
