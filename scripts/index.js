@@ -129,7 +129,7 @@ const renderCartList = (product) => {
 // Renderiza en el icono de carrito la cantidad de elementos que hay en el mismo
 const renderProductsCounterIcon = () => {
   if (!cart.length) {
-    productsCounterIcon.style.display = "none";
+    cleanProductsCartIcon();
   } else {
     let productsCounterArray = cart.map(desestructuringQuantity);
     let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
