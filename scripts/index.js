@@ -253,18 +253,18 @@ const addToCart = (itemSelected) => {
 
 // Funcion que verifica antes de agregar el item
 const checkBeforeToAdd = (itemSelected) => {
-  if (!cart.length) {
-    addToCart(itemSelected);
+	if (!cart.length) {
+	  addToCart(itemSelected);
+	  return;
   } else {
-    cart.map((item) => {
-      if (item.id == itemSelected.id) {
-        alertCart();
-      } else {
-        addToCart(itemSelected);
-      }
-    });
+	  const mapItemsId = cart.map((element)=>element.id);
+	  if(mapItemsId.includes(itemSelected.id)){
+		  alertCart();
+		  return;
+	  }
   }
-};
+	  addToCart(itemSelected);
+  };
 
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
 const getItemInfo = (e) => {
