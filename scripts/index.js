@@ -6,7 +6,7 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
-	window.innerWidth < 900 ? navbarMenu.style.display="none" : '';
+	window.innerWidth < 900 ? (navbarMenu.style.display = "none") : "";
 
 	getPrices();
 };
@@ -36,13 +36,13 @@ const openCloseBurguerMenu = () => {
 };
 
 //fix display nav
-const showNavBar = ()=>{
-	if(window.innerWidth > 900){
-		navbarMenu.style.display="flex";
-	}else{
-		navbarMenu.style.display="none";
+const showNavBar = () => {
+	if (window.innerWidth > 900) {
+		navbarMenu.style.display = "flex";
+	} else {
+		navbarMenu.style.display = "none";
 	}
-}
+};
 
 const renderNoPopulars = (noPopularsArray, current) => {
 	menuContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
@@ -90,7 +90,7 @@ const desestructuringPopulars = (popularObj) => {
 				<h3 class="itemTitle">${name}</h3>
 				<p class="itemSubtitle">${subtitle}</p>
 			<div class="itemBuy">
-				<p class="price">$ ${price}</p>
+				<p class="price">$ ${price == 0 ? "Gratis" : price}</p>
 				<button class="addCart addToCart" data-id=${id}>Agregar</button>
 			</div>
 			</div>
@@ -113,7 +113,7 @@ const renderCartList = (product) => {
 			<img class="image-simulate" src="${img}" alt="imagen de producto" />
 			<h3 class="items-cart-title">${name}</h3>
 			<span class="items-cart-second-title">${subtitle}</span>
-			<span class="items-cart-precio">$${price}</span>
+			<span class="items-cart-precio">$${price == 0 ? "Gratis" : price}</span>
 			<div class="buttons-pedido-container" id="containerLessAndMore">
 				<button class="pedido-button-less" id="buttonLess" data-id=${id}>-</button>
 				<span class="pedido-value">${quantity}</span>
@@ -127,16 +127,15 @@ const renderCartList = (product) => {
 const renderProductsCounterIcon = () => {
 	if (!cart.length) {
 		cleanProductsCartIcon();
-	} 
-	if(cart.length >=2){
-		deleteAllMsJ.style.visibility="visible";
 	}
-	else {
+	if (cart.length >= 2) {
+		deleteAllMsJ.style.visibility = "visible";
+	} else {
 		let productsCounterArray = cart.map(desestructuringQuantity);
 		let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
 		productsCounterIcon.style.display = "flex";
 		productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
-		deleteAllMsJ.style.visibility="hidden";
+		deleteAllMsJ.style.visibility = "hidden";
 	}
 };
 
@@ -172,25 +171,17 @@ const getPrices = () => {
 	if (precio < 5000) {
 		envioPrice = "Gratis";
 		total.textContent = precio;
-	} 
-	else{
+	} else {
 		envioPrice = 500;
 		total.textContent = precio + envioPrice;
 	}
-	
+
 	envio.textContent = envioPrice;
 	subtotal.textContent = precio;
-	
-	if(isNaN(precio))
-	{
-		envio.textContent="GRATIS"
-		subtotal.textContent="GRATIS"
-		total.textContent="GRATIS"
-	}
+
 	if (!cart.length) {
 		cleanPrices();
 	}
-	
 };
 // Funcion que incrementa la cantidad del item en el carrito
 const incrementQuantity = (idProduct) => {
@@ -294,17 +285,16 @@ for (let i = 0; i < 12; i++) {
 }
 
 const randomRecommended = () => {
-	const result = productsArray.filter((item) => randomNums.includes(item.id))
-	const recommendedArray = result.slice(0, 3)
-	recommendedArray.filter(renderRecommended)
-}
+	const result = productsArray.filter((item) => randomNums.includes(item.id));
+	const recommendedArray = result.slice(0, 3);
+	recommendedArray.filter(renderRecommended);
+};
 
 const renderRecommended = (value) => {
-	const { id, name, subtitle, price, img } = value
-	const recommendedContainer = document.createElement('div')
-	recommendedContainer.className = 'recommendedContainer'
-	recommendedContainer
-	.innerHTML = `<img src="${img}" alt="">
+	const { id, name, subtitle, price, img } = value;
+	const recommendedContainer = document.createElement("div");
+	recommendedContainer.className = "recommendedContainer";
+	recommendedContainer.innerHTML = `<img src="${img}" alt="">
 								<div class="recommendedTextGroup">
 									<span id="recommendedTitle" class="recommendedTitle">${name}</span>
 									<span id="recommendedParap" class="recommendedParap">${subtitle}</span>
@@ -312,15 +302,15 @@ const renderRecommended = (value) => {
 								</div>
 								<div class="recommendedBtn">
 									<button id='recommendedAddToCart' data-id=${id}>Agregar</button>
-								</div>`
-	recommendedApp.appendChild(recommendedContainer)
-}
+								</div>`;
+	recommendedApp.appendChild(recommendedContainer);
+};
 
-const deleteAllProductsItems = ()=>{
+const deleteAllProductsItems = () => {
 	itemsCartSelected.innerHTML = "";
-	deleteAllMsJ.style.visibility  ="hidden";
+	deleteAllMsJ.style.visibility = "hidden";
 	localStorage.cart = "";
-}
+};
 
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
@@ -340,7 +330,6 @@ const renderMenu = (e) => {
 	}
 };
 
-
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
@@ -350,12 +339,12 @@ const init = () => {
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
-	window.addEventListener('resize', showNavBar);
+	window.addEventListener("resize", showNavBar);
 	document.addEventListener("click", renderMenu);
-	deleteAllMsJ.addEventListener('click', deleteAllProductsItems)
+	deleteAllMsJ.addEventListener("click", deleteAllProductsItems);
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
-	randomRecommended()
+	randomRecommended();
 };
 cartRender();
 
