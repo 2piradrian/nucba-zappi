@@ -7,8 +7,8 @@ const envio = document.querySelector(".precio-span-envio");
 const containerLessAndMore = document.querySelector("#containerLessAndMore");
 const buttonLess = document.querySelector("#buttonLess");
 const buttonPlus = document.querySelector("#buttonPlus");
-const deleteAllMsJ = document.querySelector('#deleteAllMsJ');
-const itemsCartContainer = document.querySelector('#items-cart-container');
+const deleteAllMsJ = document.querySelector("#deleteAllMsJ");
+const itemsCartContainer = document.querySelector("#items-cart-container");
 // Menu Hamb
 const burguerIcon = document.getElementById("burguerMenu");
 const navbarMenu = document.querySelector("#navbarMenu");
@@ -22,10 +22,8 @@ const showMoreButton = document.querySelector("#showMoreButton");
 const showLessButton = document.querySelector("#showLess");
 const menuContainer = document.getElementById("mostPopularContainer");
 // Recommended
-const recommendedApp = document.getElementById('recommendedApp')
-const recommendedAddToCart = document.getElementById('recommendedAddToCart')
-
-
+const recommendedApp = document.getElementById("recommendedApp");
+const recommendedAddToCart = document.getElementById("recommendedAddToCart");
 
 let navigator = {
 	current: 0,
@@ -75,7 +73,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza4.png",
 		popular: false,
-		price: "GRATIS",
+		price: 0,
 		subtitle: "Quesito",
 	},
 	{
