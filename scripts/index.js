@@ -6,7 +6,8 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
-	navbarMenu.style.display="none";
+	window.innerWidth < 900 ? navbarMenu.style.display="none" : '';
+
 	getPrices();
 };
 // Ocultar carrito de compras
@@ -36,7 +37,6 @@ const openCloseBurguerMenu = () => {
 
 //fix display nav
 const showNavBar = ()=>{
-	// console.log(window.innerWidth)
 	if(window.innerWidth > 900){
 		navbarMenu.style.display="flex";
 	}else{
@@ -127,11 +127,16 @@ const renderCartList = (product) => {
 const renderProductsCounterIcon = () => {
 	if (!cart.length) {
 		cleanProductsCartIcon();
-	} else {
+	} 
+	if(cart.length >=2){
+		deleteAllMsJ.style.visibility="visible";
+	}
+	else {
 		let productsCounterArray = cart.map(desestructuringQuantity);
 		let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
 		productsCounterIcon.style.display = "flex";
 		productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
+		deleteAllMsJ.style.visibility="hidden";
 	}
 };
 
@@ -265,7 +270,6 @@ const checkBeforeToAdd = (itemSelected) => {
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
-	console.log(idProduct)
 	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
 
 	if (e.target.classList.contains("pedido-button-less")) {
@@ -312,13 +316,16 @@ const renderRecommended = (value) => {
 	recommendedApp.appendChild(recommendedContainer)
 }
 
+const deleteAllProductsItems = ()=>{
+	itemsCartSelected.innerHTML = "";
+	deleteAllMsJ.style.visibility  ="hidden";
+}
+
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
 	newPopular = productsArray.filter((objeto) => randomNums.includes(objeto.id));
-	console.log(newPopular);
 	renderNewPopular = newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
 };
-
 
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
@@ -344,6 +351,7 @@ const init = () => {
 	cartMenuContainer.addEventListener("click", getItemInfo);
 	window.addEventListener('resize', showNavBar);
 	document.addEventListener("click", renderMenu);
+	deleteAllMsJ.addEventListener('click', deleteAllProductsItems)
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
 	randomRecommended()

@@ -7,6 +7,8 @@ const envio = document.querySelector(".precio-span-envio");
 const containerLessAndMore = document.querySelector("#containerLessAndMore");
 const buttonLess = document.querySelector("#buttonLess");
 const buttonPlus = document.querySelector("#buttonPlus");
+const deleteAllMsJ = document.querySelector('#deleteAllMsJ');
+const itemsCartContainer = document.querySelector('#items-cart-container');
 // Menu Hamb
 const burguerIcon = document.getElementById("burguerMenu");
 const navbarMenu = document.querySelector("#navbarMenu");

@@ -640,6 +640,20 @@ main {
 	mix-blend-mode: normal;
 	opacity: 0.3;
 }
+.deleteAllMsj{
+	color: white;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	font-size: clamp(12px, 2vw, 13px);
+	background: linear-gradient(50.81deg, #ffa100 -300%, #ff005c 141.53%);
+	border-radius:12px;
+	width: 120px;
+	padding: 2px 0px 2px 0px;
+	cursor: pointer;
+	filter: drop-shadow(2px 2px 2px black);
+	visibility: hidden;
+}
 /* .decorationBackground {
 	position: fixed;
 	top: 0;
