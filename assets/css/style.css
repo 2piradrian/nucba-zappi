@@ -719,13 +719,20 @@ main {
 	align-items: center;
 	flex-direction: column;
 	padding: 3rem;
+	font-size: clamp(12px, 2vw, 17px);
+	width: 100%;
+	text-align: center;
 }
-
+.footerTerms{
+	display: flex;
+	gap:20px;
+}
 .footerTerms > a {
 	text-decoration: none;
 	color: var(--contrast);
-	padding: 3rem;
+	/* padding: 3rem; */
 	font-weight: 400;
+	
 }
 
 .footerCopy {
@@ -736,7 +743,15 @@ main {
 .strong {
 	font-weight: 900;
 }
-
+.showMoreButton{
+	background: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
+	box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
+	border-radius: 15px;
+	color: white;
+	font-weight: 200;
+	padding: 12px;
+	width:150px
+}
 @media screen and (min-width: 570px) {
 	.bigTitle {
 		font-size: 45px;
@@ -767,6 +782,14 @@ main {
 		max-width: 78px;
 	}
 }
+
+@media (max-width:410px){
+	.footerTerms{
+		font-size: 9px;
+		gap: 5px;
+	}
+}
+
 @media screen and (min-width: 900px) {
 	header {
 		padding: 0 110px 0 75px;
