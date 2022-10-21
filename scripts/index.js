@@ -175,6 +175,13 @@ const getPrices = () => {
 	
 	envio.textContent = envioPrice;
 	subtotal.textContent = precio;
+	
+	if(isNaN(precio))
+	{
+		envio.textContent="GRATIS"
+		subtotal.textContent="GRATIS"
+		total.textContent="GRATIS"
+	}
 	if (!cart.length) {
 		cleanPrices();
 	}
