@@ -337,21 +337,12 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-<<<<<<< HEAD
-	// document.addEventListener("click", (e) => closeMenuTargetDetect(e));
-=======
->>>>>>> a00efc375a87138d811132faa99c4b34826a10ba
 	showMoreButton.addEventListener("click", showFourMore);
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
-<<<<<<< HEAD
-	recommendedAddToCart.addEventListener('click', getItemInfo)
-	window.addEventListener("resize", showNavBar);
-=======
 	window.addEventListener('resize', showNavBar);
->>>>>>> a00efc375a87138d811132faa99c4b34826a10ba
 	document.addEventListener("click", renderMenu);
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
