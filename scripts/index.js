@@ -6,6 +6,7 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
+	navbarMenu.style.display="none";
 	getPrices();
 };
 // Ocultar carrito de compras
@@ -29,15 +30,19 @@ const openCloseBurguerMenu = () => {
 		navbarMenu.style.display = "none";
 	} else {
 		navbarMenu.style.display = "flex";
+		cartMenuContainer.style.display = "none";
 	}
 };
 
-//Mostrar navbar en resoluciones mayores a 900px de width
-const showNavBar = () => {
-	if (window.outerWidth > 900) {
-		navbarMenu.style.display = "flex";
-	} else navbarMenu.style.display = "none";
-};
+//fix display nav
+const showNavBar = ()=>{
+	// console.log(window.innerWidth)
+	if(window.innerWidth > 900){
+		navbarMenu.style.display="flex";
+	}else{
+		navbarMenu.style.display="none";
+	}
+}
 
 const renderNoPopulars = (noPopularsArray, current) => {
 	menuContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
@@ -159,27 +164,29 @@ const cartRender = () => {
 const getPrices = () => {
 	const precio = cart.reduce((acc, cur) => acc + Number(cur.price) * Number(cur.quantity), 0);
 	let envioPrice;
-	if (precio > 5000) {
+	if (precio < 5000) {
 		envioPrice = "Gratis";
 		total.textContent = precio;
-	} else {
+	} 
+	else{
 		envioPrice = 500;
 		total.textContent = precio + envioPrice;
 	}
+	
 	envio.textContent = envioPrice;
 	subtotal.textContent = precio;
+	
+	if(isNaN(precio))
+	{
+		envio.textContent="GRATIS"
+		subtotal.textContent="GRATIS"
+		total.textContent="GRATIS"
+	}
 	if (!cart.length) {
 		cleanPrices();
 	}
+	
 };
-
-// const closeMenuTargetDetect = (e) => {
-// 	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-// 		closeCartMenu();
-// 		console.log("asd")
-// 	}
-// };
-
 // Funcion que incrementa la cantidad del item en el carrito
 const incrementQuantity = (idProduct) => {
 	cart = cart.map((item) => {
@@ -325,18 +332,26 @@ const renderMenu = (e) => {
 	}
 };
 
+
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
+<<<<<<< HEAD
 	// document.addEventListener("click", (e) => closeMenuTargetDetect(e));
+=======
+>>>>>>> a00efc375a87138d811132faa99c4b34826a10ba
 	showMoreButton.addEventListener("click", showFourMore);
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
+<<<<<<< HEAD
 	recommendedAddToCart.addEventListener('click', getItemInfo)
 	window.addEventListener("resize", showNavBar);
+=======
+	window.addEventListener('resize', showNavBar);
+>>>>>>> a00efc375a87138d811132faa99c4b34826a10ba
 	document.addEventListener("click", renderMenu);
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
