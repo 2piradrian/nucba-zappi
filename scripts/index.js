@@ -6,6 +6,7 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
+	navbarMenu.style.display="none";
 	getPrices();
 };
 // Ocultar carrito de compras
@@ -31,6 +32,7 @@ const openCloseBurguerMenu = () => {
 		navbarMenu.style.display = "none";
 	} else {
 		navbarMenu.style.display = "flex";
+		cartMenuContainer.style.display = "none";
 	}
 };
 
