@@ -19,6 +19,11 @@ const productsCounterIcon = document.querySelector("#productsCounterIcon");
 const showMoreButton = document.querySelector("#showMoreButton");
 const showLessButton = document.querySelector("#showLess");
 const menuContainer = document.getElementById("mostPopularContainer");
+// Recommended
+const recommendedApp = document.getElementById('recommendedApp')
+const recommendedAddToCart = document.getElementById('recommendedAddToCart')
+
+
 
 let navigator = {
 	current: 0,

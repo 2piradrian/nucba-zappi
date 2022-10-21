@@ -23,8 +23,6 @@ const closeCartMenuToScroll = () => {
 	};
 };
 
-closeCartMenuToScroll();
-
 // Mostrar menu hamburguesa
 const openCloseBurguerMenu = () => {
 	if (navbarMenu.style.display === "flex") {
@@ -88,7 +86,7 @@ const desestructuringPopulars = (popularObj) => {
 				<p class="itemSubtitle">${subtitle}</p>
 			<div class="itemBuy">
 				<p class="price">$ ${price}</p>
-				<button class="addToCart" data-id=${id}>Agregar</button>
+				<button class="addCart addToCart" data-id=${id}>Agregar</button>
 			</div>
 			</div>
 	</div>
@@ -260,6 +258,7 @@ const checkBeforeToAdd = (itemSelected) => {
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
+	console.log(idProduct)
 	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
 
 	if (e.target.classList.contains("pedido-button-less")) {
@@ -282,12 +281,38 @@ for (let i = 0; i < 12; i++) {
 		i--;
 	}
 }
+
+const randomRecommended = () => {
+	const result = productsArray.filter((item) => randomNums.includes(item.id))
+	const recommendedArray = result.slice(0, 3)
+	recommendedArray.filter(renderRecommended)
+}
+
+const renderRecommended = (value) => {
+	const { id, name, subtitle, price, img } = value
+	const recommendedContainer = document.createElement('div')
+	recommendedContainer.className = 'recommendedContainer'
+	recommendedContainer
+	.innerHTML = `<img src="${img}" alt="">
+								<div class="recommendedTextGroup">
+									<span id="recommendedTitle" class="recommendedTitle">${name}</span>
+									<span id="recommendedParap" class="recommendedParap">${subtitle}</span>
+									<span id="recommendedPrice" class="recommendedPrice">$${price}</span>
+								</div>
+								<div class="recommendedBtn">
+									<button id='recommendedAddToCart' data-id=${id}>Agregar</button>
+								</div>`
+	recommendedApp.appendChild(recommendedContainer)
+}
+
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
 	newPopular = productsArray.filter((objeto) => randomNums.includes(objeto.id));
 	console.log(newPopular);
 	renderNewPopular = newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
 };
+
+
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
@@ -304,15 +329,18 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) => closeMenuTargetDetect(e));
+	// document.addEventListener("click", (e) => closeMenuTargetDetect(e));
 	showMoreButton.addEventListener("click", showFourMore);
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
+	recommendedAddToCart.addEventListener('click', getItemInfo)
 	window.addEventListener("resize", showNavBar);
 	document.addEventListener("click", renderMenu);
 	renderProductsCounterIcon();
+	closeCartMenuToScroll();
+	randomRecommended()
 };
 cartRender();
 
