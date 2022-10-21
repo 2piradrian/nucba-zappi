@@ -34,9 +34,9 @@ const openCloseBurguerMenu = () => {
 	}
 };
 
-//Mostrar navbar en resoluciones mayores a 900px de width
+// Mostrar navbar en resoluciones mayores a 900px de width
 const showNavBar = () => {
-	if (window.outerWidth > 900) {
+	if(window.screen.width > 900) {
 		navbarMenu.style.display = "flex";
 	} else navbarMenu.style.display = "none";
 };
