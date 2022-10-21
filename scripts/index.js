@@ -35,11 +35,11 @@ const openCloseBurguerMenu = () => {
 };
 
 // Mostrar navbar en resoluciones mayores a 900px de width
-const showNavBar = () => {
-	if(screen.width > 900) {
-		navbarMenu.style.display = "flex";
-	} else navbarMenu.style.display = "none";
-};
+// const showNavBar = () => {
+// 	if(screen.width > 900) {
+// 		navbarMenu.style.display = "flex";
+// 	} else navbarMenu.style.display = "none";
+// };
 
 const renderNoPopulars = (noPopularsArray, current) => {
 	menuContainer.innerHTML += noPopularsArray[current].map(desestructuringPopulars).join("");
@@ -295,6 +295,15 @@ const renderMenu = (e) => {
 	}
 };
 
+const showNavBar = ()=>{
+	// console.log(window.innerWidth)
+	if(window.innerWidth > 900){
+		navbarMenu.style.display="flex";
+	}else{
+		navbarMenu.style.display="none";
+	}
+}
+
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
@@ -304,7 +313,8 @@ const init = () => {
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
-	window.addEventListener("resize", showNavBar);
+	// window.addEventListener("resize", ()=> {if(screen.width > 900){showNavBar}});
+	window.addEventListener('resize', showNavBar);
 	document.addEventListener("click", renderMenu);
 	renderProductsCounterIcon();
 };
