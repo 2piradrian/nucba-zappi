@@ -161,27 +161,22 @@ const cartRender = () => {
 const getPrices = () => {
 	const precio = cart.reduce((acc, cur) => acc + Number(cur.price) * Number(cur.quantity), 0);
 	let envioPrice;
-	if (precio > 5000) {
+	if (precio < 5000) {
 		envioPrice = "Gratis";
 		total.textContent = precio;
-	} else {
+	} 
+	else{
 		envioPrice = 500;
 		total.textContent = precio + envioPrice;
 	}
+	
 	envio.textContent = envioPrice;
 	subtotal.textContent = precio;
 	if (!cart.length) {
 		cleanPrices();
 	}
+	
 };
-
-// const closeMenuTargetDetect = (e) => {
-// 	if (!cartMenuContainer.contains(e.target) && e.target !== cartNavIcon) {
-// 		closeCartMenu();
-// 		console.log("asd")
-// 	}
-// };
-
 // Funcion que incrementa la cantidad del item en el carrito
 const incrementQuantity = (idProduct) => {
 	cart = cart.map((item) => {
@@ -304,7 +299,6 @@ const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	document.addEventListener("click", (e) => closeMenuTargetDetect(e));
 	showMoreButton.addEventListener("click", showFourMore);
 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
 	filterMostPopulars(productsArray);

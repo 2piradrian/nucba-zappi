@@ -68,7 +68,7 @@ const productsArray = [
 		category: "pizza",
 		img: "./assets/img/pizzas/pizza4.png",
 		popular: false,
-		price: 1430,
+		price: "GRATIS",
 		subtitle: "Quesito",
 	},
 	{
