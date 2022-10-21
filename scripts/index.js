@@ -36,7 +36,7 @@ const openCloseBurguerMenu = () => {
 
 // Mostrar navbar en resoluciones mayores a 900px de width
 const showNavBar = () => {
-	if(window.screen.width > 900) {
+	if(screen.width > 900) {
 		navbarMenu.style.display = "flex";
 	} else navbarMenu.style.display = "none";
 };
