@@ -319,6 +319,7 @@ const renderRecommended = (value) => {
 const deleteAllProductsItems = ()=>{
 	itemsCartSelected.innerHTML = "";
 	deleteAllMsJ.style.visibility  ="hidden";
+	localStorage.cart = "";
 }
 
 const randomProducts = () => {
