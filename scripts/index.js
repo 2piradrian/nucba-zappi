@@ -309,7 +309,9 @@ const renderRecommended = (value) => {
 const deleteAllProductsItems = () => {
 	itemsCartSelected.innerHTML = "";
 	deleteAllMsJ.style.visibility = "hidden";
-	localStorage.cart = "";
+	cart = [];
+	saveToLocalStorage(cart);
+	getPrices();
 };
 
 const randomProducts = () => {
