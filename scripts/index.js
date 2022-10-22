@@ -6,19 +6,23 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
-	window.innerWidth < 900 ? (navbarMenu.style.display = "none") : "";
-
+	window.innerWidth < 900 ? (navbarMenu.style.display = "none" , overlay.classList.remove("show-overlay")) : "";
+	overlay.classList.toggle("show-overlay");
+	header.style.opacity = 1;
 	getPrices();
 };
 // Ocultar carrito de compras
 const closeCartMenu = () => {
 	cartMenuContainer.style.display = "none";
+	overlay.classList.remove("show-overlay");
+	header.style.opacity = 0.9;
 };
 
 const closeCartMenuToScroll = () => {
 	window.onscroll = () => {
 		if (document.documentElement.scrollTop > 30) {
 			closeCartMenu();
+			overlay.classList.remove("show-overlay");
 		} else {
 			return;
 		}
@@ -29,9 +33,14 @@ const closeCartMenuToScroll = () => {
 const openCloseBurguerMenu = () => {
 	if (navbarMenu.style.display === "flex") {
 		navbarMenu.style.display = "none";
+		header.style.opacity = 0.9;
+		overlay.classList.remove("show-overlay");
 	} else {
 		navbarMenu.style.display = "flex";
 		cartMenuContainer.style.display = "none";
+		header.style.opacity = 1;
+		overlay.classList.toggle("show-overlay");
+		
 	}
 };
 
@@ -125,16 +134,18 @@ const renderCartList = (product) => {
 
 // Renderiza en el icono de carrito la cantidad de elementos que hay en el mismo
 const renderProductsCounterIcon = () => {
+
 	if (!cart.length) {
 		cleanProductsCartIcon();
+	} else {
+	let productsCounterArray = cart.map(desestructuringQuantity);
+	let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
+	productsCounterIcon.style.display = "flex";
+	productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
 	}
 	if (cart.length >= 2) {
 		deleteAllMsJ.style.visibility = "visible";
 	} else {
-		let productsCounterArray = cart.map(desestructuringQuantity);
-		let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
-		productsCounterIcon.style.display = "flex";
-		productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
 		deleteAllMsJ.style.visibility = "hidden";
 	}
 };
@@ -312,6 +323,7 @@ const deleteAllProductsItems = () => {
 	cart = [];
 	saveToLocalStorage(cart);
 	getPrices();
+	renderProductsCounterIcon();
 };
 
 const randomProducts = () => {

@@ -6,17 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/assets/css/style.css" />
 		<link rel="stylesheet" href="assets/css/categories.css" />
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 		<title>Nucba Zappi</title>
 		<script src="https://kit.fontawesome.com/cb93d80cbc.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
+			
 			<!-- Mati Header -->
 			<div class="logoContainer">
 				<img src="assets/nucbazappiicon.png" alt="nucba zappi icono" />
 			</div>
 
 			<nav>
+
 				<div class="burguerContainer" id="burguerMenu">
 					<span>
 						<i class="fa-solid fa-bars fa-2x"></i>
@@ -51,30 +54,34 @@
 						></a>
 					</li>
 				</ul>
-			</nav>
-			<div class="cart-menu-grid-container" id="cart_menu_container">
-				<button class="close-button" id="closeButton">x</button>
-				<h2 class="cart-title">Tus productos</h2>
-
-				<div id="items-cart-container" class="items-cart-container"></div>
-
-				<div class="container-precios">
-					<span class="subtotal-span">Subtotal:</span>
-					<span class="envio-span">Envío:</span>
-					<span class="precio-span-subtotal">$4.890</span>
-					<span class="precio-span-envio">Gratis</span>
-					<button class="deleteAllMsj" id="deleteAllMsJ">Eliminar todos</button>
-					<hr class="hr" />
+				<div class="overlay"></div>
+				<div class="cart-menu-grid-container" id="cart_menu_container">
+					<button class="close-button" id="closeButton">x</button>
+					<h2 class="cart-title">Tus productos</h2>
+	
+					<div id="items-cart-container" class="items-cart-container"></div>
+	
+					<div class="container-precios">
+						<span class="subtotal-span">Subtotal:</span>
+						<span class="envio-span">Envío:</span>
+						<span class="precio-span-subtotal">$4.890</span>
+						<span class="precio-span-envio">Gratis</span>
+						<button class="deleteAllMsj" id="deleteAllMsJ">Eliminar todos</button>
+						<hr class="hr" />
+					</div>
+					<span class="total-span">Total: </span>
+					<span class="total-span-precio">$4.890</span>
+	
+					<button class="button-buy">Comprar</button>
+					<span class="verMas-text">Ver más productos</span>
 				</div>
-				<span class="total-span">Total: </span>
-				<span class="total-span-precio">$4.890</span>
-
-				<button class="button-buy">Comprar</button>
-				<span class="verMas-text">Ver más productos</span>
-			</div>
+				
+			</nav>
+			
 		</header>
 		<div class="containerBody">
 			<main>
+				
 				<section class="appHero">
 					<!-- Hero -->
 					<div class="presentation">

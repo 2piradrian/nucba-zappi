@@ -9,6 +9,8 @@ const buttonLess = document.querySelector("#buttonLess");
 const buttonPlus = document.querySelector("#buttonPlus");
 const deleteAllMsJ = document.querySelector("#deleteAllMsJ");
 const itemsCartContainer = document.querySelector("#items-cart-container");
+const overlay = document.querySelector(".overlay");
+const header = document.querySelector("header");
 // Menu Hamb
 const burguerIcon = document.getElementById("burguerMenu");
 const navbarMenu = document.querySelector("#navbarMenu");
