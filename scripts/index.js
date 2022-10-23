@@ -6,7 +6,7 @@ const saveToLocalStorage = (cart) => {
 // Mostrar carrito de compras
 const showCartMenu = () => {
 	cartMenuContainer.style.display = "grid";
-	window.innerWidth < 900 ? (navbarMenu.style.display = "none" , overlay.classList.remove("show-overlay")) : "";
+	window.innerWidth < 900 ? ((navbarMenu.style.display = "none"), overlay.classList.remove("show-overlay")) : "";
 	overlay.classList.toggle("show-overlay");
 	header.style.opacity = 1;
 	getPrices();
@@ -40,7 +40,6 @@ const openCloseBurguerMenu = () => {
 		cartMenuContainer.style.display = "none";
 		header.style.opacity = 1;
 		overlay.classList.toggle("show-overlay");
-		
 	}
 };
 
@@ -134,14 +133,13 @@ const renderCartList = (product) => {
 
 // Renderiza en el icono de carrito la cantidad de elementos que hay en el mismo
 const renderProductsCounterIcon = () => {
-
 	if (!cart.length) {
 		cleanProductsCartIcon();
 	} else {
-	let productsCounterArray = cart.map(desestructuringQuantity);
-	let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
-	productsCounterIcon.style.display = "flex";
-	productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
+		let productsCounterArray = cart.map(desestructuringQuantity);
+		let totalProducts = productsCounterArray.reduce((a, b) => a + b, 0);
+		productsCounterIcon.style.display = "flex";
+		productsCounterIcon.innerHTML = `<p>${totalProducts}</p>`;
 	}
 	if (cart.length >= 2) {
 		deleteAllMsJ.style.visibility = "visible";
@@ -273,16 +271,14 @@ const checkBeforeToAdd = (itemSelected) => {
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
 	const itemSelected = productsArray.filter((item) => item.id == idProduct)[0];
-
 	if (e.target.classList.contains("pedido-button-less")) {
 		return decrementQuantity(idProduct);
 	} else if (e.target.classList.contains("pedido-button-plus")) {
 		return incrementQuantity(idProduct);
-	} else if (!e.target.classList.contains("addToCart")) {
+	} else if (e.target.classList.contains("addToCart") || e.target.classList.contains("recommendedAddToCart")) {
+		checkBeforeToAdd(itemSelected);
 		return;
 	}
-
-	checkBeforeToAdd(itemSelected);
 };
 let randomNums = (arrayfor = []);
 
@@ -309,10 +305,10 @@ const renderRecommended = (value) => {
 								<div class="recommendedTextGroup">
 									<span id="recommendedTitle" class="recommendedTitle">${name}</span>
 									<span id="recommendedParap" class="recommendedParap">${subtitle}</span>
-									<span id="recommendedPrice" class="recommendedPrice">$${price}</span>
+									<span id="recommendedPrice" class="recommendedPrice">$${price == 0 ? "Gratis" : price}</span>
 								</div>
 								<div class="recommendedBtn">
-									<button id='recommendedAddToCart' data-id=${id}>Agregar</button>
+									<button class='recommendedAddToCart' data-id=${id}>Agregar</button>
 								</div>`;
 	recommendedApp.appendChild(recommendedContainer);
 };
@@ -353,6 +349,7 @@ const init = () => {
 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
+	recommendedApp.addEventListener("click", getItemInfo);
 	window.addEventListener("resize", showNavBar);
 	document.addEventListener("click", renderMenu);
 	deleteAllMsJ.addEventListener("click", deleteAllProductsItems);
