@@ -757,6 +757,7 @@ main {
 	width: 100%;
 	text-align: center;
 	position: relative;
+	top: 80px;
 }
 .footerTerms{
 	display: flex;
@@ -821,6 +822,10 @@ main {
 		top: 150px;
 	}
 
+	.footer{
+		top: 120px;
+	}
+	
 }
 
 @media (max-width:410px){
