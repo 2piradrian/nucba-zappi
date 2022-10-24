@@ -179,14 +179,14 @@ const getPrices = () => {
 	let envioPrice;
 	if (precio < 5000) {
 		envioPrice = "Gratis";
-		total.textContent = precio;
+		total.textContent = `$${precio}`;
 	} else {
 		envioPrice = 500;
 		total.textContent = precio + envioPrice;
 	}
 
 	envio.textContent = envioPrice;
-	subtotal.textContent = precio;
+	subtotal.textContent = `$${precio}`;
 
 	if (!cart.length) {
 		cleanPrices();
