@@ -328,6 +328,19 @@ const randomProducts = () => {
 	renderNewPopular = newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
 };
 
+// resalta la categoria seleccionada
+const changeBtnActive = (clickData) => {
+	const categories = [...allCategories];
+	categories.forEach((category) => {
+		console.log(category.dataset.type);
+		if (category.dataset.type !== clickData) {
+			category.classList.remove("active");
+			return;
+		}
+
+		category.classList.add("active");
+	});
+};
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
@@ -335,8 +348,13 @@ const renderMenu = (e) => {
 		randomProducts();
 	} else if (clickData) {
 		menuContainer.innerHTML = "";
-		const obtainProduct = productsArray.filter((objeto) => objeto.category === clickData);
-		renderProduct = obtainProduct.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
+		const obtainProduct = productsArray.filter(
+			(objeto) => objeto.category === clickData
+		);
+		renderProduct = obtainProduct.map(
+			(object) => (menuContainer.innerHTML += desestructuringPopulars(object))
+		);
+		changeBtnActive(clickData);
 	}
 };
 
