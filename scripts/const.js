@@ -23,9 +23,12 @@ const productsCounterIcon = document.querySelector("#productsCounterIcon");
 const showMoreButton = document.querySelector("#showMoreButton");
 const showLessButton = document.querySelector("#showLess");
 const menuContainer = document.getElementById("mostPopularContainer");
+const allCategories = document.querySelectorAll(".category");
 // Recommended
 const recommendedApp = document.getElementById("recommendedApp");
 const recommendedAddToCart = document.getElementById("recommendedAddToCart");
+
+
 
 let navigator = {
 	current: 0,
