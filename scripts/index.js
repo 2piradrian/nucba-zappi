@@ -29,6 +29,29 @@ const closeCartMenuToScroll = () => {
 	};
 };
 
+
+// Finalizar compra
+
+const checkout = () => {
+	if(isButtonBuyActive()){
+		const confirmCheckout= window.confirm("¿Desea finalizar la compra?");
+	if (confirmCheckout) {
+		deleteAllProductsItems();
+		window.alert("Su compra ha finalizado. Gracias por elegirnos!");
+		closeCartMenu();
+	} else return;
+	} else return;
+	
+}
+
+// Chequea si el botón de finalizar compra está activo
+
+const isButtonBuyActive = () => {
+	if (buttonBuy.classList.contains("active-button-buy")){
+		return true;
+	} else return false;
+}
+
 // Mostrar menu hamburguesa
 const openCloseBurguerMenu = () => {
 	if (navbarMenu.style.display === "flex") {
@@ -168,9 +191,11 @@ const cartRender = () => {
 		itemsCartSelected.innerHTML = "<p>Tu carrito está vacío :(</p>";
 		cleanPrices();
 		cleanProductsCartIcon();
+		activeButtonBuy();
 		return;
 	}
 	itemsCartSelected.innerHTML = cart.map(renderCartList).join("");
+	activeButtonBuy();
 };
 
 // Multiplica precio por cantidad y va acumulando para obtener el subtotal
@@ -213,6 +238,7 @@ const deleteItem = () => {
 	saveToLocalStorage(cart);
 	cartRender();
 	renderProductsCounterIcon();
+	activeButtonBuy();
 };
 
 // Funcion que decrementa la cantidad del item en el carrito
@@ -267,6 +293,24 @@ const checkBeforeToAdd = (itemSelected) => {
 	addToCart(itemSelected);
 };
 
+// Estila el botón de compra si hay productos o no
+
+const activeButtonBuy = () => {
+
+	if (!cart.length) {
+		if (buttonBuy.classList.contains("active-button-buy")) {
+			buttonBuy.classList.remove("active-button-buy");
+		}
+		buttonBuy.classList.toggle("desactive-button-buy");
+	} else {
+		if (buttonBuy.classList.contains("active-button-buy")) {
+			return;
+		}
+		buttonBuy.classList.toggle("active-button-buy");
+	}
+}
+
+
 // Funcion que obtiene el elemento y lo añade al carro o cambia la cantidad segun corresponda
 const getItemInfo = (e) => {
 	const idProduct = e.target.dataset.id;
@@ -280,6 +324,7 @@ const getItemInfo = (e) => {
 		return;
 	}
 };
+
 let randomNums = (arrayfor = []);
 
 for (let i = 0; i < 12; i++) {
@@ -297,6 +342,7 @@ const randomRecommended = () => {
 	recommendedArray.filter(renderRecommended);
 };
 
+
 const renderRecommended = (value) => {
 	const { id, name, subtitle, price, img } = value;
 	const recommendedContainer = document.createElement("div");
@@ -313,6 +359,8 @@ const renderRecommended = (value) => {
 	recommendedApp.appendChild(recommendedContainer);
 };
 
+// Función que elimina todos los productos del carrito
+
 const deleteAllProductsItems = () => {
 	itemsCartSelected.innerHTML = "";
 	deleteAllMsJ.style.visibility = "hidden";
@@ -320,7 +368,9 @@ const deleteAllProductsItems = () => {
 	saveToLocalStorage(cart);
 	getPrices();
 	renderProductsCounterIcon();
+	activeButtonBuy();
 };
+
 
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
@@ -328,7 +378,7 @@ const randomProducts = () => {
 	renderNewPopular = newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
 };
 
-// resalta la categoria seleccionada
+// Resalta la categoria seleccionada
 const changeBtnActive = (clickData) => {
 	const categories = [...allCategories];
 	categories.forEach((category) => {
@@ -341,6 +391,7 @@ const changeBtnActive = (clickData) => {
 		category.classList.add("active");
 	});
 };
+
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
@@ -371,10 +422,12 @@ const init = () => {
 	window.addEventListener("resize", showNavBar);
 	document.addEventListener("click", renderMenu);
 	deleteAllMsJ.addEventListener("click", deleteAllProductsItems);
+	buttonBuy.addEventListener("click", checkout);
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
 	randomRecommended();
 };
+
 cartRender();
 
 init();

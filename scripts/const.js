@@ -11,6 +11,7 @@ const deleteAllMsJ = document.querySelector("#deleteAllMsJ");
 const itemsCartContainer = document.querySelector("#items-cart-container");
 const overlay = document.querySelector(".overlay");
 const header = document.querySelector("header");
+const buttonBuy = document.querySelector(".button-buy");
 // Menu Hamb
 const burguerIcon = document.getElementById("burguerMenu");
 const navbarMenu = document.querySelector("#navbarMenu");
