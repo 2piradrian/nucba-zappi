@@ -105,10 +105,10 @@ const showFourMore = () => {
 	navigator.current < result.length - 2 ? (navigator.current = navigator.current + 1) : showButtonLess();
 };
 
-//funcion de renderizado de los más populares en HTML.
-const renderMostPopulars = (mostPopularsArray) => {
-	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
-};
+// //funcion de renderizado de los más populares en HTML.
+// const renderMostPopulars = (mostPopularsArray) => {
+// 	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+// };
 
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj) => {
@@ -130,11 +130,11 @@ const desestructuringPopulars = (popularObj) => {
 };
 
 // Filtra los populares y llama al render
-const filterMostPopulars = (arrayOfObjects) => {
-	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
-	renderMostPopulars(mostPopularFiltered);
-	return mostPopularFiltered;
-};
+// const filterMostPopulars = (arrayOfObjects) => {
+// 	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
+// 	renderMostPopulars(mostPopularFiltered);
+// 	return mostPopularFiltered;
+// };
 
 // Renderiza los elementos en el carrito
 const renderCartList = (product) => {
@@ -325,16 +325,7 @@ const getItemInfo = (e) => {
 	}
 };
 
-let randomNums = (arrayfor = []);
 
-for (let i = 0; i < 12; i++) {
-	let resultado = Math.floor(Math.random() * 28);
-	if (!arrayfor.includes(resultado)) {
-		arrayfor.push(resultado);
-	} else {
-		i--;
-	}
-}
 
 const randomRecommended = () => {
 	const result = productsArray.filter((item) => randomNums.includes(item.id));
@@ -370,8 +361,17 @@ const deleteAllProductsItems = () => {
 	renderProductsCounterIcon();
 	activeButtonBuy();
 };
-
-
+let randomNums = (arrayfor = []);
+//se crean 12 numeros aleatorios
+for (let i = 0; i < 12; i++) {
+	let resultado = Math.floor(Math.random() * 28);
+	if (!arrayfor.includes(resultado)) {
+		arrayfor.push(resultado);
+	} else {
+		i--;
+	}
+}
+//Renderiza los random en base al array randomNums
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
 	newPopular = productsArray.filter((objeto) => randomNums.includes(objeto.id));
@@ -405,6 +405,7 @@ const renderMenu = (e) => {
 		renderProduct = obtainProduct.map(
 			(object) => (menuContainer.innerHTML += desestructuringPopulars(object))
 		);
+	
 		changeBtnActive(clickData);
 	}
 };
@@ -414,8 +415,8 @@ const init = () => {
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	showMoreButton.addEventListener("click", showFourMore);
-	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
-	filterMostPopulars(productsArray);
+// 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
+// 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
 	recommendedApp.addEventListener("click", getItemInfo);
@@ -426,6 +427,7 @@ const init = () => {
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
 	randomRecommended();
+	randomProducts()
 };
 
 cartRender();
