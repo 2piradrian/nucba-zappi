@@ -387,7 +387,7 @@ main {
 .close-button-container {
 	width: 40px;
 	height: 40px;
-	padding-top: 30px 0 30px 0;
+	padding: 30px 0 30px 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
