@@ -38,7 +38,7 @@ button {
 
 button:hover{
 	background: linear-gradient(to right, #d88902, #c80d30);
-	transform: scale(1.05);
+	transform: scale(1.025);
 }
 
 .containerBody {
@@ -679,6 +679,9 @@ main {
 	visibility: hidden;
 }
 
+.deleteAllMsj:hover{
+	background: linear-gradient(50.81deg, #cd8201 -300%, #b80144 141.53%);
+}
 .overlay {
 	position: absolute;
 	top: 0;
