@@ -427,6 +427,7 @@ const init = () => {
 	renderProductsCounterIcon();
 	closeCartMenuToScroll();
 	randomRecommended();
+	randomProducts()
 };
 
 cartRender();
