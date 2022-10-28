@@ -643,6 +643,12 @@ main {
 	cursor:none;
 }
 
+.desactive-button-buy:hover{
+	background: rgb(142, 140, 140);
+	transform: scale(1);
+}
+
+}
 .active-button-buy{
 	background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
 	box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
