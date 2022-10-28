@@ -33,7 +33,14 @@ body {
 }
 button {
 	cursor: pointer;
+	transition: 0.25s;
 }
+
+button:hover{
+	background: linear-gradient(to right, #d88902, #c80d30);
+	transform: scale(1.05);
+}
+
 .containerBody {
 	width: 100%;
 	max-width: 1350px;
