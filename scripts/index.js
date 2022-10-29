@@ -24,6 +24,7 @@ const closeCartMenuToScroll = () => {
 			closeCartMenu();
 			overlay.classList.remove("show-overlay");
 			navbarMenu.style.display="none";
+			showNavBar();
 		} else {
 			return;
 		}

@@ -358,7 +358,7 @@ main {
 	background-color: #252525;
 	height: 100vh;
 	width: 400px;
-	/* max-width: 470px; */
+	max-width: 470px;
 	display: none;
 	top: 0;
 	right: 10%;
@@ -861,7 +861,19 @@ main {
 	}
 }
 
+@media (max-width: 352px){
+	.cart-menu-grid-container{
+		
+		max-width: 300px;
+		grid-template-columns: 120px 120px;
+		left:5%;
+	}
+}
 @media (max-width: 450px) {
+	.items-cart-container{
+		max-width: 300px;
+	}
+	}
 	.footerTerms {
 		font-size: 9px;
 		gap: 5px;
@@ -872,7 +884,6 @@ main {
 		right: 0;
 	}
 	
-}
 
 @media screen and (min-width: 900px) {
 	header {
