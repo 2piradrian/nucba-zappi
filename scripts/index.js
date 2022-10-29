@@ -23,6 +23,7 @@ const closeCartMenuToScroll = () => {
 		if (document.documentElement.scrollTop > 30) {
 			closeCartMenu();
 			overlay.classList.remove("show-overlay");
+			navbarMenu.style.display="none";
 		} else {
 			return;
 		}
@@ -106,9 +107,9 @@ const showFourMore = () => {
 };
 
 // //funcion de renderizado de los más populares en HTML.
-// const renderMostPopulars = (mostPopularsArray) => {
-// 	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
-// };
+const renderMostPopulars = (mostPopularsArray) => {
+	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+};
 
 // funcion solo para desestructurar los objs.
 const desestructuringPopulars = (popularObj) => {
@@ -130,11 +131,11 @@ const desestructuringPopulars = (popularObj) => {
 };
 
 // Filtra los populares y llama al render
-// const filterMostPopulars = (arrayOfObjects) => {
-// 	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
-// 	renderMostPopulars(mostPopularFiltered);
-// 	return mostPopularFiltered;
-// };
+const filterMostPopulars = (arrayOfObjects) => {
+	const mostPopularFiltered = arrayOfObjects.filter((e) => e.popular);
+	renderMostPopulars(mostPopularFiltered);
+	return mostPopularFiltered;
+};
 
 // Renderiza los elementos en el carrito
 const renderCartList = (product) => {
@@ -415,8 +416,8 @@ const init = () => {
 	closeButton.addEventListener("click", closeCartMenu);
 	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	showMoreButton.addEventListener("click", showFourMore);
-// 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
-// 	filterMostPopulars(productsArray);
+ 	showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
+ 	filterMostPopulars(productsArray);
 	menuContainer.addEventListener("click", getItemInfo);
 	cartMenuContainer.addEventListener("click", getItemInfo);
 	recommendedApp.addEventListener("click", getItemInfo);
