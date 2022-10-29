@@ -377,7 +377,7 @@ for (let i = 0; i < 12; i++) {
 const randomProducts = () => {
 	menuContainer.innerHTML = "";
 	newPopular = productsArray.filter((objeto) => randomNums.includes(objeto.id));
-	renderNewPopular = newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
+	newPopular.map((object) => (menuContainer.innerHTML += desestructuringPopulars(object)));
 };
 
 // Resalta la categoria seleccionada
