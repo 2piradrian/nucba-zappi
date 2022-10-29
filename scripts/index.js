@@ -83,7 +83,7 @@ const renderNoPopulars = (noPopularsArray, current) => {
 
 const showLessFunction = (array) => {
 	showButtonMore();
-	renderMostPopulars(array[0], 0);
+	renderMostPopulars(array, 0);
 };
 
 const showButtonMore = () => {
@@ -109,7 +109,7 @@ const showFourMore = () => {
 
 // //funcion de renderizado de los más populares en HTML.
 const renderMostPopulars = (mostPopularsArray) => {
-	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join("");
+	menuContainer.innerHTML = mostPopularsArray.map(desestructuringPopulars).join('');
 };
 
 // funcion solo para desestructurar los objs.
