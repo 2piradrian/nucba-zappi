@@ -25,6 +25,7 @@ const showMoreButton = document.querySelector("#showMoreButton");
 const showLessButton = document.querySelector("#showLess");
 const menuContainer = document.getElementById("mostPopularContainer");
 const allCategories = document.querySelectorAll(".category");
+const filteredTitle = document.getElementById("filteredTitle")
 // Recommended
 const recommendedApp = document.getElementById("recommendedApp");
 const recommendedAddToCart = document.getElementById("recommendedAddToCart");
@@ -40,7 +41,7 @@ const productsArray = [
 	{
 		id: 1,
 		name: "Muzzarela",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza3.png",
 		popular: false,
 		price: 1250,
@@ -49,7 +50,7 @@ const productsArray = [
 	{
 		id: 2,
 		name: "Con peperoni",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza6.png",
 		popular: false,
 		price: 1400,
@@ -58,7 +59,7 @@ const productsArray = [
 	{
 		id: 3,
 		name: "Con jamon crudo y rucula",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza2.png",
 		popular: false,
 		price: 1250,
@@ -67,7 +68,7 @@ const productsArray = [
 	{
 		id: 4,
 		name: "Con vegetales",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza1.png",
 		popular: false,
 		price: 1100,
@@ -76,7 +77,7 @@ const productsArray = [
 	{
 		id: 5,
 		name: "Con Cheddar y hongos",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza4.png",
 		popular: false,
 		price: 0,
@@ -85,7 +86,7 @@ const productsArray = [
 	{
 		id: 6,
 		name: "Pizza veggie",
-		category: "pizza",
+		category: "Pizzas",
 		img: "./assets/img/pizzas/pizza8.png",
 		popular: false,
 		price: 1290,
@@ -94,7 +95,7 @@ const productsArray = [
 	{
 		id: 7,
 		name: "Hamburguesa completa",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/completa.jpg",
 		popular: false,
 		price: 800,
@@ -103,7 +104,7 @@ const productsArray = [
 	{
 		id: 8,
 		name: "Con queso",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/simpleQueso.webp",
 		popular: false,
 		price: 750,
@@ -112,7 +113,7 @@ const productsArray = [
 	{
 		id: 9,
 		name: "Con queso Brie y hongos",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/mushroomBrie.jpg",
 		popular: false,
 		price: 750,
@@ -121,7 +122,7 @@ const productsArray = [
 	{
 		id: 10,
 		name: "Con barbacoa",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/barbecue.webp",
 		popular: false,
 		price: 850,
@@ -130,7 +131,7 @@ const productsArray = [
 	{
 		id: 11,
 		name: "Con aros de cebolla",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/onionRing.jpg",
 		popular: false,
 		price: 850,
@@ -139,7 +140,7 @@ const productsArray = [
 	{
 		id: 12,
 		name: "Veggie de lentejas",
-		category: "hamburguesa",
+		category: "Hamburguesas",
 		img: "./assets/img/products/veggie.jpg",
 		popular: false,
 		price: 700,
@@ -148,7 +149,7 @@ const productsArray = [
 	{
 		id: 13,
 		name: "Papas fritas",
-		category: "papas",
+		category: "Papas",
 		img: "./assets/img/products/fries.jpg",
 		popular: false,
 		price: 700,
@@ -157,7 +158,7 @@ const productsArray = [
 	{
 		id: 14,
 		name: "Con Bacon&Cheddar",
-		category: "papas",
+		category: "Papas",
 		img: "./assets/img/products/friesBacon.jpg",
 		popular: false,
 		price: 800,
@@ -166,7 +167,7 @@ const productsArray = [
 	{
 		id: 15,
 		name: "Con Chili",
-		category: "papas",
+		category: "Papas",
 		img: "./assets/img/products/friesChili.jpg",
 		popular: false,
 		price: 750,
@@ -175,7 +176,7 @@ const productsArray = [
 	{
 		id: 16,
 		name: "Con queso crema y ciboulette",
-		category: "papas",
+		category: "Papas",
 		img: "./assets/img/products/friesCreamChesse.jpg",
 		popular: false,
 		price: 1000,
@@ -184,7 +185,7 @@ const productsArray = [
 	{
 		id: 17,
 		name: "Con carne",
-		category: "wrap",
+		category: "Wraps",
 		img: "./assets/img/products/wrapMeat.jpg",
 		popular: false,
 		price: 1000,
@@ -193,7 +194,7 @@ const productsArray = [
 	{
 		id: 18,
 		name: "Con atun",
-		category: "wrap",
+		category: "Wraps",
 		img: "./assets/img/products/wrapAtun.jpg",
 		popular: false,
 		price: 900,
@@ -202,7 +203,7 @@ const productsArray = [
 	{
 		id: 19,
 		name: "De vegetales",
-		category: "wrap",
+		category: "Wraps",
 		img: "./assets/img/products/wrapVeggie.webp",
 		popular: false,
 		price: 950,
@@ -211,7 +212,7 @@ const productsArray = [
 	{
 		id: 20,
 		name: "Tacos de carne",
-		category: "mexicana",
+		category: "Mexican Food",
 		img: "./assets/img/products/tacosMeat.webp",
 		popular: false,
 		price: 1250,
@@ -220,7 +221,7 @@ const productsArray = [
 	{
 		id: 21,
 		name: "Tacos Veggie",
-		category: "mexicana",
+		category: "Mexican Food",
 		img: "./assets/img/products/tacosVeggie.jpg",
 		popular: false,
 		price: 1000,
@@ -229,7 +230,7 @@ const productsArray = [
 	{
 		id: 22,
 		name: "Quesadilla",
-		category: "mexicana",
+		category: "Mexican Food",
 		img: "./assets/img/products/quesadilla.jpg",
 		popular: false,
 		price: 600,
@@ -238,7 +239,7 @@ const productsArray = [
 	{
 		id: 23,
 		name: "Nachos con cheddar",
-		category: "mexicana",
+		category: "Mexican Food",
 		img: "./assets/img/products/nachosCheddar.webp",
 		popular: false,
 		price: 780,
@@ -247,7 +248,7 @@ const productsArray = [
 	{
 		id: 24,
 		name: "Nachos full",
-		category: "mexicana",
+		category: "Mexican Food",
 		img: "./assets/img/products/nachosBeans.jpg",
 		popular: false,
 		price: 950,
@@ -256,7 +257,7 @@ const productsArray = [
 	{
 		id: 25,
 		name: "De frutilla",
-		category: "batido",
+		category: "Batidos",
 		img: "./assets/img/products/shakeStrawberry.webp",
 		popular: false,
 		price: 600,
@@ -265,7 +266,7 @@ const productsArray = [
 	{
 		id: 26,
 		name: "De chocolate",
-		category: "batido",
+		category: "Batidos",
 		img: "./assets/img/products/shakeChocolate.jpg",
 		popular: false,
 		price: 600,
@@ -274,7 +275,7 @@ const productsArray = [
 	{
 		id: 27,
 		name: "Sprinkle",
-		category: "batido",
+		category: "Batidos",
 		img: "./assets/img/products/shakeSprinkle.webp",
 		popular: false,
 		price: 600,
@@ -283,7 +284,7 @@ const productsArray = [
 	{
 		id: 28,
 		name: "De Mashmellow",
-		category: "batido",
+		category: "Batidos",
 		img: "./assets/img/products/shakeMashmellow.jpg",
 		popular: false,
 		price: 600,

@@ -384,7 +384,7 @@ const randomProducts = () => {
 const changeBtnActive = (clickData) => {
 	const categories = [...allCategories];
 	categories.forEach((category) => {
-		console.log(category.dataset.type);
+
 		if (category.dataset.type !== clickData) {
 			category.classList.remove("active");
 			return;
@@ -397,9 +397,11 @@ const changeBtnActive = (clickData) => {
 // Selecciona categoria y lo renderiza
 const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
+	console.log(clickData);
 	if (clickData === "popular") {
 		randomProducts();
 		changeBtnActive(clickData);
+		changeFilterTitle(clickData);
 	} else if (clickData) {
 		menuContainer.innerHTML = "";
 		const obtainProduct = productsArray.filter(
@@ -410,8 +412,18 @@ const renderMenu = (e) => {
 		);
 	
 		changeBtnActive(clickData);
+		changeFilterTitle(clickData);
 	}
 };
+
+
+//Renderiza el nombre de la categpría seleccionada
+const changeFilterTitle = (filterName) => {
+	if (filterName === "popular")
+	{
+		filteredTitle.innerHTML="Los más populares";
+	} else filteredTitle.innerHTML = filterName;
+}
 
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
