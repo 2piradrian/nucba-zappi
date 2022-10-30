@@ -212,7 +212,7 @@ const getPrices = () => {
 		total.textContent = `$${precio+envioPrice}`;
 	}
 
-	envio.textContent = envioPrice;
+	envio.textContent = `$${envioPrice}`;
 	subtotal.textContent = `$${precio}`;
 
 	if (!cart.length) {
