@@ -480,8 +480,8 @@ main {
 
 .items-cart > .image-simulate {
 	background-color: red;
-	width: 55px;
-	height: 55px;
+	width: 62px;
+	height: 62px;
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
@@ -489,7 +489,10 @@ main {
 	display: grid;
 	justify-self: center;
 	align-items: center;
+	object-fit: cover;
+	border-radius: 16px;	
 }
+
 .items-cart > .items-cart-title {
 	grid-column-start: 2;
 	grid-column-end: 3;
