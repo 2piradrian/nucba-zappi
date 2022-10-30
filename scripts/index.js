@@ -399,6 +399,7 @@ const renderMenu = (e) => {
 	const clickData = e.target.dataset.type;
 	if (clickData === "popular") {
 		randomProducts();
+		changeBtnActive(clickData);
 	} else if (clickData) {
 		menuContainer.innerHTML = "";
 		const obtainProduct = productsArray.filter(
